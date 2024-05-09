@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
-import "./LoginRegister.css";
+import "./styles.css";
 
-const LoginRegister = () => {
+export const LoginRegister = () => {
 
     const [action, setAction] = useState('');
 
@@ -130,5 +130,3 @@ const LoginRegister = () => {
     </div>
     );
 };
-
-export default LoginRegister;

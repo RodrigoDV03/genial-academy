@@ -1,13 +1,10 @@
-import { useState } from 'react'
 import './App.css'
-import LoginRegister from './Components/loginRegister/LoginRegister'
+import { LoginRegister } from './pages/Login'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return(
+  return (
     <div>
-      <LoginRegister />
+      <LoginRegister></LoginRegister>
     </div>
   )
 }
