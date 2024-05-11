@@ -1,0 +1,156 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+/* HEADER */
+
+header{
+    background-color: #4CAD95;
+    height: 100px;
+    display: flex;
+}
+
+.header{
+    margin: auto;
+    display: flex;
+}
+
+.nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 6px 20px;
+    position: sticky;
+    top: 0;
+    margin-bottom: 10px;
+}
+
+.nav__ul{
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav__item{
+    list-style: none;
+    margin: 0 60px;
+}
+
+.nav__ul-container{
+    flex-grow: 4;
+}
+
+.nav__logo-container, .nav__ul-container{
+    flex-grow: 1;
+    text-align: center;
+}
+
+.nav__link{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 0;
+    transition: background-color 0.3s, border-radius 0.24s;
+    margin: 2px;
+}
+
+.nav__link:hover{
+    background-color: #4C8C95;
+    border-radius: 20px;
+    outline-offset: -7px;
+}
+
+.nav__logo{
+    width: 100px;
+    margin-top: 20px;
+    margin-left: -450px;
+}
+
+/* MAIN */
+
+main{
+    padding: 0 200px;
+}
+
+.Content{
+    justify-content: center;
+    display: flex;
+    padding: 40px;
+}
+
+.Content__Text{
+    margin: 0px;
+    width: 400px;
+    padding-top: 80px;
+    padding-right: 70px;
+    text-align: justify;
+}
+
+.Content__Text h2{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #296F5D;
+}
+
+.Content__Text p{
+    margin-top: 50px;
+    font-size: 16px;
+}
+
+.Content__image{
+    width: 455px;
+    height: 400px;
+    background-image: url(/src/assets/images/Group_360.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.Areas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Areas__container{
+    background-color: #90CDBE;
+    height: 500px;
+    width: 500px;
+    margin: 50px;
+    border-radius: 10px;
+}
+
+.Area__title{
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    width: 100%;
+    padding: 10px 30px;
+    margin: 20px 0;
+    color: #296F5D;
+}
+
+.Area__title .Area__Letter{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.Area__title .Area__Name{
+    margin-left: 5px;
+}
+
+
+.Area__Careers{
+    margin: 0px 50px;
+    height: 350px;
+    color: #000;
+}
+
+.Area__Careers ul li{
+    margin: 10px 0px;
+}
+
+/* FOOTER */
