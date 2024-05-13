@@ -1,52 +1,43 @@
 body{
-    min-width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+p{
+    margin: auto 0;
+    padding: 0;
+    color: #f00;
+    font-size: 16px;
+}
+
+.container{
+    height: 100vh;
     background: url(/src/assets/images/Wave.png);
-    background-size: cover;  
+    background-size: cover;
+    display: flex;
+}
+
+.login__image{
+    height: 1000px;
+    width: 1000px;
+    background-image: url(/src/assets/images/Login_image.png);
+    background-size: cover;
+    margin-top: -150px;
+    margin-left: 200px;
 }
 
 .wrapper{
-    position: relative;
-    width: 400px;
-    height: 600px;
+    width: 600px;
+    height: 700px;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    padding: 30px 40px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    transition: height .2s ease;
+    margin-top: 100px;
 }
 
-.wrapper.active{
-    height: 720px;
-    width: 500px;
-}
 
 .wrapper .form__box{
-    width: 100%;
     padding: 40px;
-}
-
-.wrapper .form__box.login{
-    transition: translate .18s ease;
-    translate: 0;
-}
-
-.wrapper.active .form__box.login{
-    transition: none;
-    translate: -500px
-}
-
-.wrapper .form__box.register{
-    position: absolute;
-    transition: none;
-    translate: 400px;
-}
-
-.wrapper.active .form__box.register{
-    transition: translate .18s ease;
-    translate: -35px;
 }
 
 form h1{
@@ -63,32 +54,30 @@ form h2{
 }
 
 form .input__box{
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 50px 0;
+    width: 85%;
+    margin: 40px 0;
 }
 
 .input__box input{
     width: 100%;
-    height: 100%;
+    height: 40px;
     outline: none;
     background-color: transparent;
     border: 1px solid #0009;
     border-radius: 10px;
     font-size: 16px;
-    padding: 20px 45px 20px 20px;
+    padding: 20px 40px;
 }
 
 form button{
-    width: 100%;
-    height: 50px;
-    margin: 10px 0;
+    height: 60px;
+    width: 200px;
+    margin-top: 30px;
+    margin-left: 170px;
     background-color: #4CAD95;
     color: #fff;
     font-size: 20px;
     border: none;
-    outline: none;
     cursor: pointer;
     border-radius: 10px;
 }
@@ -99,6 +88,10 @@ form .register__link{
     padding: 20px;
 }
 
+.register__link p{
+    color: #000;
+}
+
 .register__link p a{
     font-weight: bold;
     text-decoration: none;
@@ -107,5 +100,17 @@ form .register__link{
 
 .register__link p a:hover{
     text-decoration: underline;
+}
+
+.success{
+    height: 30px;
+    width: 300px;
+    margin: auto;
+    margin-top: 0;
+    background-color: #4CAD95;
+    border-radius: 40px;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
 }
 

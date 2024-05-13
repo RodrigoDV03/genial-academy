@@ -1,6 +1,8 @@
 body{
     margin: 0;
     padding: 0;
+    font-size: 20px;
+    color: #282828;
 }
 /* HEADER */
 
@@ -75,85 +77,46 @@ header{
 /* MAIN */
 
 main{
-    padding: 0 200px;
+    padding: 40px 0;
 }
 
-.Content{
-    justify-content: center;
-    display: flex;
-    padding: 40px;
-}
-
-.Content__Text{
-    margin: 0px;
-    width: 400px;
-    padding-top: 80px;
-    padding-right: 70px;
-    text-align: justify;
-}
-
-.Content__Text h2{
-    font-size: 40px;
+h1{
+    font-size: 32px;
     text-align: center;
-    text-transform: uppercase;
-    color: #296F5D;
+    font-weight: bold;
 }
 
-.Content__Text p{
-    margin-top: 50px;
-    font-size: 16px;
-}
-
-.Content__image{
-    width: 460px;
-    height: 400px;
-    background-image: url(/src/assets/images/Group_360.png);
-    background-size: cover;
-    background-position: center;
-}
-
-.Areas{
+.themes__main{
+    margin: 10px 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.Areas__container{
-    background-color: #90CDBE;
-    height: 600px;
-    width: 500px;
-    margin: 50px;
-    border-radius: 10px;
-}
-
-.Area__title{
+.theme__container{
+    height: 100px;
+    width: 340px;
+    margin: 40px 70px;
+    background-color: #eee;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     display: flex;
-    justify-content: center;
-    height: 30px;
-    width: 100%;
-    padding: 10px 30px;
-    margin: 20px 0;
-    color: #296F5D;
 }
 
-.Area__title .Area__Letter{
-    font-weight: bold;
-    text-transform: uppercase;
+.theme__color{
+    margin: 20px;
+    height: 60%;
+    width: 10px;
 }
 
-.Area__title .Area__Name{
-    margin-left: 5px;
+.themes__title{
+    width: 300px;
+    margin: 40px 0;
 }
 
-
-.Area__Careers{
-    margin: 0px 50px;
-    height: 350px;
-    color: #000;
-}
-
-.Area__Careers ul li{
-    margin: 10px 0px;
+.theme__container:hover{
+    cursor: pointer;
+    background-color: #C3C3C3;
 }
 
 /* FOOTER */

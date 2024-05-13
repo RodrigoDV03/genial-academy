@@ -7,7 +7,7 @@ export const Area = () => {
                 <div className="header">
                     <div className="nav__logo-container">
                         <div className="nav__logo"> 
-                            GENIALACADEMY
+                            <img src="/src/assets/images/GENIALACADEMY_LOGO.png" alt="" />
                         </div>
                     </div>
                     <nav className="nav">
@@ -149,7 +149,39 @@ export const Area = () => {
                 </div>
             </main>
             <footer>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet nulla, vitae numquam non quidem consequatur vel quibusdam, ducimus eligendi veritatis modi beatae ea! Doloremque pariatur laboriosam deserunt, eligendi hic numquam.
+                <div className="footer__container">
+                        <div className="footer__logo"> 
+                            <img src="/src/assets/images/GENIALACADEMY_LOGO.png" />
+                        </div>
+                    <div className="footer__list">
+                        <ul>
+                            <li>Política de privacidad</li>
+                            <li>Ayuda</li>
+                            <li>Acuerdo de suscripción</li>
+                            <li>Sobre nosotros</li>
+                            <li>Dispositivos compatibles</li>
+                        </ul>
+                    </div>
+                    <div className="social__media">
+                        <div className="social__media-container">
+                            <div className="social__media-icon">
+                                <div className="social__media-image">
+                                    <img src="/src/assets/images/facebook.png"/>
+                                </div>
+                            </div>
+                            <div className="social__media-icon">
+                                <div className="social__media-image">
+                                    <img src="/src/assets/images/instagram.png"/>
+                                </div>
+                            </div>
+                            <div className="social__media-icon">
+                                <div className="social__media-image">
+                                    <img src="/src/assets/images/twitter.png"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </footer>
         </div>
     );

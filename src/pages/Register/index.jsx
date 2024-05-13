@@ -64,65 +64,47 @@ export const Register = () => {
     }
 
     return (
-    <div className={`wrapper${action}`}>
-        <div className="form__box login">
-            <form>
-                <h1>HOLA! GENIALACADEMY</h1>
-                <h2>Iniciar Sesión</h2>
-                <div className="input__box">
-                    Correo electrónico:
-                    <input type="email"/>
-                </div>
-                <div className="input__box">
-                    Contraseña:
-                    <input type="password"/>
-                </div>
-                <button>Iniciar Sesión</button>
-
-            <div className="register__link">
-                <p>
-                ¿No tienes una cuenta? <a href="#" onClick={registerLink}>Registrate</a>
-                </p>
+        <div className="container">
+            <div className="login__image">
             </div>
-            </form>
-        </div>
+            <div className={`wrapper${action}`}>
+                <div className="form__box register">
+                    {Object.keys(formErrors).length === 0 && isSubmit ? 
+                    (<div className="success">Se registró correctamente</div>
+                    ) : ""}
+                    <form onSubmit={handleSubmit}>
+                        <h1>HOLA! GENIALACADEMY</h1>
+                        <h2>Regístrate</h2>
+                        <div className="input__box">
+                            Nombres:
+                            <input type="text" name="name" value={formValues.name} onChange={handleChange} />
+                        </div>
+                        <p>{formErrors.name}</p>
+                        <div className="input__box">
+                            Apellidos:
+                            <input type="text" name="lastname" value={formValues.lastname} onChange={handleChange} />
+                        </div>
+                        <p>{formErrors.lastname}</p>
+                        <div className="input__box">
+                            Correo electrónico:
+                            <input type="email" name="email" value={formValues.email} onChange={handleChange} />
+                        </div>
+                        <p>{formErrors.email}</p>
+                        <div className="input__box">
+                            Contraseña:
+                            <input type="password" name="password" value={formValues.password} onChange={handleChange} />
+                        </div>
+                        <p>{formErrors.password}</p>
+                        <button>Registrarse</button>
 
-        <div className="form__box register">
-            {Object.keys(formErrors).length === 0 && isSubmit ? 
-            (<div className="success">Se registró correctamente</div>
-            ) : ""}
-            <form onSubmit={handleSubmit}>
-                <h1>HOLA! GENIALACADEMY</h1>
-                <h2>Regístrate</h2>
-                <div className="input__box">
-                    Nombres:
-                    <input type="text" name="name" value={formValues.name} onChange={handleChange} />
+                        <div className="register__link">
+                            <p>
+                                ¿Ya tienes una cuenta? <a href="#" onClick={loginLink}>Iniciar Sesión</a>
+                            </p>
+                        </div>
+                    </form>
                 </div>
-                <p>{formErrors.name}</p>
-                <div className="input__box">
-                    Apellidos:
-                    <input type="text" name="lastname" value={formValues.lastname} onChange={handleChange} />
-                </div>
-                <p>{formErrors.lastname}</p>
-                <div className="input__box">
-                    Correo electrónico:
-                    <input type="email" name="email" value={formValues.email} onChange={handleChange} />
-                </div>
-                <p>{formErrors.email}</p>
-                <div className="input__box">
-                    Contraseña:
-                    <input type="password" name="password" value={formValues.password} onChange={handleChange} />
-                </div>
-                <p>{formErrors.password}</p>
-                <button>Registrarse</button>
-
-                <div className="register__link">
-                    <p>
-                        ¿Ya tienes una cuenta? <a href="#" onClick={loginLink}>Iniciar Sesión</a>
-                    </p>
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
     );
 };
