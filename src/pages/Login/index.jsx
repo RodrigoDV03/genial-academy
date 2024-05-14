@@ -1,19 +1,8 @@
 import React, {useState, useEffect} from "react";
-import "./styles.css";
+import { Link } from "react-router-dom";
+import "./stylesLogin.css";
 
 export const Login = () => {
-
-    const [action, setAction] = useState('');
-
-    const registerLink = (e) => {
-        e.preventDefault();
-        setAction(' active');
-    }
-
-    const loginLink = (e) => {
-        e.preventDefault();
-        setAction('');
-    }
     
 // ---------------------------------------------------------------------
 
@@ -63,27 +52,28 @@ export const Login = () => {
         <div className="container">
             <div className="login__image">
             </div>
-            <div className={`wrapper${action}`}>
-                <div className="form__box login">
-                    {Object.keys(formErrors).length === 0 && isSubmit ? (<div className="success">Inicio de sesión realizado</div>) : ""}
+            <div className="wrapper">
+                <div className="form__box">
+                    {Object.keys(formErrors).length === 0 && isSubmit ? (<div className="success">Sesión iniciada</div>) : ""}
                     <form onSubmit={handleSubmit}>
                         <h1>HOLA! GENIALACADEMY</h1>
                         <h2>Iniciar Sesión</h2>
                         <div className="input__box">
-                            Correo electrónico:
+                            <div className="input__title">Correo electrónico:</div> 
                             <input type="email" name="email" value={formValues.email} onChange={handleChange} />
                         </div>
                         <p>{formErrors.email}</p>
                         <div className="input__box">
-                            Contraseña:
+                            <div className="input__title">Contraseña:</div> 
                             <input type="password" name="password" value={formValues.password} onChange={handleChange} />
                         </div>
                         <p>{formErrors.password}</p>
-                        <button>Iniciar Sesión</button>
+                        <div className="Login__Button">
+                            <Link to="/home" id={"Login__Link"}>Iniciar Sesión</Link>
+                        </div>
 
                     <div className="register__link">
-                        <p>¿No tienes una cuenta? <a href="#">Registrate</a>
-                        </p>
+                        <p>¿No tienes una cuenta? <Link to="/register">Registrate</Link></p>
                     </div>
                     </form>
                 </div>

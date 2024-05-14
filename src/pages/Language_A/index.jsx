@@ -1,4 +1,5 @@
 import "./styles.css"
+import { Link } from "react-router-dom";
 
 export const Language = () => {
     return (
@@ -6,14 +7,14 @@ export const Language = () => {
             <header>
                 <div className="header">
                     <div className="nav__logo-container">
-                        <div className="nav__logo"> 
+                        <div className="nav__logo">
                             <img src="/src/assets/images/GENIALACADEMY_LOGO.png" alt="" />
                         </div>
                     </div>
                     <nav className="nav">
                         <div className="nav__ul-container">
                             <ul className="nav__ul">
-                                <li className="nav__item"><a href="#" className="nav__link">Inicio</a></li>
+                                <li className="nav__item"><Link to="/home" className="nav__link">Inicio</Link></li>
                                 <li className="nav__item"><a href="#" className="nav__link">Universidades</a></li>
                                 <li className="nav__item"><a href="#" className="nav__link">Foro</a></li>
                                 <li className="nav__item"><a href="#" className="nav__link">Biblioteca Virtual</a></li>

@@ -1,17 +1,37 @@
 import './App.css'
-// import { Login } from './pages/Login'
-// import { Register } from './pages/Register'
-// import { LoginRegister } from './pages/Login'
-// import { Area } from './pages/Area'
-import Language from './pages/Language_A'
+import { Login } from './pages/Login'
+import { Register } from './pages/Register'
+import { Home } from './pages/Home'
+import { Area } from './pages/Area'
+import { Language } from './pages/Language_A'
+import { RouterProvider ,createBrowserRouter } from 'react-router-dom'
 
 function App() {
+  const route = createBrowserRouter([
+    {
+      path: "/",
+      element: <Login />
+    },
+    {
+      path: "/register",
+      element: <Register />
+    },
+    {
+      path: "/home",
+      element: <Home/>
+    },
+    {
+      path: "/area",
+      element: <Area/>
+    },
+    {
+      path: "/language",
+      element: <Language/>
+    }
+  ]);
   return (
     <div>
-      <Language></Language>
-      {/* <Login></Login> */}
-      {/* <Register></Register> */}
-      {/* <Area></Area> */}
+      <RouterProvider router={route}></RouterProvider>
     </div>
   )
 }

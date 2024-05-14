@@ -1,19 +1,8 @@
 import React, {useState, useEffect} from "react";
-import "./styles.css";
+import { Link } from "react-router-dom";
+import "./stylesRegister.css";
 
 export const Register = () => {
-
-    const [action, setAction] = useState('');
-
-    const registerLink = (e) => {
-        e.preventDefault();
-        setAction(' active');
-    }
-
-    const loginLink = (e) => {
-        e.preventDefault();
-        setAction('');
-    }
 
 // ---------------------------------------------------------------------
 
@@ -65,43 +54,41 @@ export const Register = () => {
 
     return (
         <div className="container">
-            <div className="login__image">
+            <div className="register__image">
             </div>
-            <div className={`wrapper${action}`}>
-                <div className="form__box register">
-                    {Object.keys(formErrors).length === 0 && isSubmit ? 
-                    (<div className="success">Se registró correctamente</div>
-                    ) : ""}
+            <div className="wrapper">
+                <div className="form__box">
+                    {Object.keys(formErrors).length === 0 && isSubmit ? (<div className="success">Sesión iniciada</div>) : ""}
                     <form onSubmit={handleSubmit}>
                         <h1>HOLA! GENIALACADEMY</h1>
-                        <h2>Regístrate</h2>
+                        <h2>Registrate</h2>
                         <div className="input__box">
-                            Nombres:
+                            <div className="input__title">Nombre:</div> 
                             <input type="text" name="name" value={formValues.name} onChange={handleChange} />
                         </div>
                         <p>{formErrors.name}</p>
                         <div className="input__box">
-                            Apellidos:
+                            <div className="input__title">Apellidos:</div> 
                             <input type="text" name="lastname" value={formValues.lastname} onChange={handleChange} />
                         </div>
                         <p>{formErrors.lastname}</p>
                         <div className="input__box">
-                            Correo electrónico:
+                            <div className="input__title">Correo electrónico:</div> 
                             <input type="email" name="email" value={formValues.email} onChange={handleChange} />
                         </div>
                         <p>{formErrors.email}</p>
                         <div className="input__box">
-                            Contraseña:
+                            <div className="input__title">Contraseña:</div> 
                             <input type="password" name="password" value={formValues.password} onChange={handleChange} />
                         </div>
                         <p>{formErrors.password}</p>
-                        <button>Registrarse</button>
-
-                        <div className="register__link">
-                            <p>
-                                ¿Ya tienes una cuenta? <a href="#" onClick={loginLink}>Iniciar Sesión</a>
-                            </p>
+                        <div className="Register__Button">
+                            <Link to="/home" id={"Register__Link"}>Regístrate</Link>
                         </div>
+
+                    <div className="login__link">
+                        <p>¿Ya tienes una cuenta? <Link to="/">Inicia Sesión</Link></p>
+                    </div>
                     </form>
                 </div>
             </div>

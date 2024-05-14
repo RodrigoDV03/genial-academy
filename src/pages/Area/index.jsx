@@ -1,4 +1,5 @@
 import "./styles.css"
+import { Link } from "react-router-dom"
 
 export const Area = () => {
     return (
@@ -13,7 +14,7 @@ export const Area = () => {
                     <nav className="nav">
                         <div className="nav__ul-container">
                             <ul className="nav__ul">
-                                <li className="nav__item"><a href="#" className="nav__link">Inicio</a></li>
+                                <li className="nav__item"><Link to="/home" className="nav__link">Inicio</Link></li>
                                 <li className="nav__item"><a href="#" className="nav__link">Universidades</a></li>
                                 <li className="nav__item"><a href="#" className="nav__link">Foro</a></li>
                                 <li className="nav__item"><a href="#" className="nav__link">Biblioteca Virtual</a></li>
@@ -108,7 +109,7 @@ export const Area = () => {
                     <div className="Areas__container">
                         <div className="Area__title">
                             <div className="Area__Letter">Área D: </div>
-                            <div className="Area__Name">Ciencias Econoómicas y de la Gestión</div>
+                            <div className="Area__Name">Ciencias Económicas y de la Gestión</div>
                         </div>
                         <div className="Area__Careers">
                             <ul>

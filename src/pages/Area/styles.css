@@ -2,6 +2,10 @@ body{
     margin: 0;
     padding: 0;
 }
+
+p{
+    color: #000;
+}
 /* HEADER */
 
 header{
@@ -130,7 +134,6 @@ main{
     display: flex;
     justify-content: center;
     height: 30px;
-    width: 100%;
     padding: 10px 30px;
     margin: 20px 0;
     color: #296F5D;
@@ -139,10 +142,6 @@ main{
 .Area__title .Area__Letter{
     font-weight: bold;
     text-transform: uppercase;
-}
-
-.Area__title .Area__Name{
-    margin-left: 5px;
 }
 
 
@@ -154,6 +153,7 @@ main{
 
 .Area__Careers ul li{
     margin: 10px 0px;
+    font-size: 16px;
 }
 
 /* FOOTER */

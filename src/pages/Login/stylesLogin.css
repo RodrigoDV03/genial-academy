@@ -1,15 +1,3 @@
-body{
-    margin: 0;
-    padding: 0;
-}
-
-p{
-    margin: auto 0;
-    padding: 0;
-    color: #f00;
-    font-size: 16px;
-}
-
 .container{
     height: 100vh;
     background: url(/src/assets/images/Wave.png);
@@ -18,21 +6,19 @@ p{
 }
 
 .login__image{
-    height: 1000px;
-    width: 1000px;
+    height: 800px;
+    width: 800px;
     background-image: url(/src/assets/images/Login_image.png);
     background-size: cover;
-    margin-top: -150px;
+    margin-bottom: 500px;
     margin-left: 200px;
 }
 
 .wrapper{
-    width: 600px;
-    height: 700px;
+    margin: auto;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-    margin-top: 100px;
 }
 
 
@@ -44,42 +30,49 @@ form h1{
     font-size: 30px;
     text-align: center;
     color: #4CAD95;
-    margin: 20px 0px;
+    margin-bottom: 10px;
 }
 
 form h2{
-    margin-top: 10px;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
 }
 
 form .input__box{
     width: 85%;
-    margin: 40px 0;
+    margin: 30px 0;
+}
+
+form .input__title{
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 .input__box input{
     width: 100%;
-    height: 40px;
-    outline: none;
+    height: 20px;
     background-color: transparent;
     border: 1px solid #0009;
     border-radius: 10px;
     font-size: 16px;
-    padding: 20px 40px;
+    padding: 20px 30px;
 }
 
-form button{
-    height: 60px;
+.Login__Button{
+    height: 40px;
     width: 200px;
-    margin-top: 30px;
-    margin-left: 170px;
+    margin: auto;
+    padding-top: 20px;
     background-color: #4CAD95;
-    color: #fff;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
+    text-align: center;
     border-radius: 10px;
+    cursor: pointer; 
+}
+
+#Login__Link{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
 }
 
 form .register__link{
@@ -101,16 +94,3 @@ form .register__link{
 .register__link p a:hover{
     text-decoration: underline;
 }
-
-.success{
-    height: 30px;
-    width: 300px;
-    margin: auto;
-    margin-top: 0;
-    background-color: #4CAD95;
-    border-radius: 40px;
-    color: #fff;
-    text-align: center;
-    padding-top: 10px;
-}
-
