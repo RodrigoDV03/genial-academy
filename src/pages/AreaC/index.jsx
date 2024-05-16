@@ -6,9 +6,7 @@ import { Footer } from '../../components/Footer';
 export const AreaC = () => {
     return (
         <div>
-            <header>
-                <NavBar></NavBar>
-            </header>
+            <NavBar></NavBar>
             <section id="section1">
                 <div id="contenedor1">
                     <div id="navigation">
@@ -54,7 +52,7 @@ export const AreaC = () => {
                         <img src='/src/assets/images/literatura.png' alt="Literatura"/>
                         <span>Literatura</span>
                     </div>
-                    <Link to={'/language'}>
+                    <Link to={'/language'} className='link_lan'>
                         <div class="circle-button">
                             <img src='/src/assets/images/lenguaje.png' alt="Lenguaje"/>
                             <span>Lenguaje</span>
@@ -133,9 +131,7 @@ export const AreaC = () => {
                     </div>
                 </div>
             </section>
-            <footer>
-                <Footer></Footer>
-            </footer>
+            <Footer></Footer>
         </div>
     );
 }

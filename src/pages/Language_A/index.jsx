@@ -6,9 +6,7 @@ import { Footer } from "../../components/Footer";
 export const Language = () => {
     return (
         <div>
-            <header>
-                <NavBar></NavBar>
-            </header>
+            <NavBar></NavBar>
             <main>
                 <h1>Lenguaje</h1>
                 <div className="themes__main">
@@ -86,9 +84,7 @@ export const Language = () => {
                     </div>
                 </div>
             </main>
-            <footer>
-                <Footer></Footer>
-            </footer>
+            <Footer></Footer>
         </div>
     );
 }

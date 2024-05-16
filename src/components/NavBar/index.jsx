@@ -16,7 +16,7 @@ export const NavBar = () => {
                 </Link>
               </li>
               <li className="nav_item">
-                <Link to={'/'} className="nav_link">
+                <Link to={'/unmsm'} className="nav_link">
                   Universidades
                 </Link>
               </li>

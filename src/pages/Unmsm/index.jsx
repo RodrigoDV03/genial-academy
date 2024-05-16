@@ -1,9 +1,13 @@
 import "./styles-unmsm.css"
 import { Link } from "react-router-dom";
+import { NavBar } from "../../components/NavBar";
+import { Footer
 
+ } from "../../components/Footer";
 export const Unmsm = () => {
     return (
-        <div>
+    <div>
+      <NavBar></NavBar>
       <div>
         <div className="banner">
           <figure className="banner__figure">
@@ -140,6 +144,7 @@ export const Unmsm = () => {
           </div>
         </section>
       </main>
+      <Footer></Footer>
     </div>
     );
 }

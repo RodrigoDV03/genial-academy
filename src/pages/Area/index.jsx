@@ -6,9 +6,7 @@ import { Footer } from "../../components/Footer";
 export const Area = () => {
     return (
         <div>
-            <header>
-                <NavBar></NavBar>
-            </header>
+            <NavBar></NavBar>
             <main>
                 <div className="Content">
                     <div className="Content__Text">
@@ -135,9 +133,7 @@ export const Area = () => {
                     </div>
                 </div>
             </main>
-            <footer>
-                <Footer></Footer>
-            </footer>
+            <Footer></Footer>
         </div>
     );
 }
