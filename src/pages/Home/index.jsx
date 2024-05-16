@@ -7,6 +7,7 @@ import {FunctionSection} from "./components/Functions";
 import {UniversitiesSection} from "./components/Universities";
 import {TutorialSection} from "./components/Tutorial";
 import {MemberShipSection} from "./components/MemberShip";
+import {FaqSection} from "./components/Faq";
 
 export const Home = () => {
     return (
@@ -18,6 +19,7 @@ export const Home = () => {
                 <UniversitiesSection></UniversitiesSection>
                 <TutorialSection></TutorialSection>
                 <MemberShipSection></MemberShipSection>
+                <FaqSection></FaqSection>
                 <Footer/>
             </div>
         </div>
