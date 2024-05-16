@@ -1,22 +1,19 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import "./styles.css";
+import {NavBar} from "../../components/NavBar";
+import {Footer} from "../../components/Footer";
+import {PresentationSection} from "./components/Presentation";
+import { FunctionSection } from "./components/Functions";
 
 export const Home = () => {
     return (
-        <div className="container">
-            <h1>Home</h1>
-            <ul>
-                <li>
-                    <Link to={"/area"}>
-                        Area
-                    </Link>
-                </li>
-                <li>
-                    <Link to={"/language"}>
-                        Lenguaje
-                    </Link>
-                </li>
-            </ul>
+        <div>
+            <NavBar/>
+            <div className="content">
+                <PresentationSection></PresentationSection>
+                <FunctionSection></FunctionSection>
+                <Footer/>
+            </div>
         </div>
     )
-}
+};
