@@ -5,6 +5,7 @@ import { Language } from "./pages/Language_A"
 import { Login } from "./pages/Login"
 import { Register } from "./pages/Register"
 import { Unmsm } from "./pages/Unmsm"
+import { AreaC } from "./pages/AreaC"
 
 export const AppRouter = () => {
     return (
@@ -16,6 +17,7 @@ export const AppRouter = () => {
         <Route path="/language" element={<Language />}></Route>
         <Route path="/unmsm" element={<Unmsm />}></Route>
         <Route path="/area" element={<Area/>}></Route>
+        <Route path="/areac" element={<AreaC/>}></Route>
       </Routes>
     )
   }
