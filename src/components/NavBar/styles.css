@@ -45,10 +45,13 @@ header{
     text-decoration: none;
     display: inline-block;
     font-weight: 500;
+    transition: all 0.1s;
 }
 
 .nav_link:hover{
-    outline: #21433B;
+    color: #21433B;
+    font-weight: 600;
+    border-bottom: 1px solid #21433B;
 }
 
 .action_button {
