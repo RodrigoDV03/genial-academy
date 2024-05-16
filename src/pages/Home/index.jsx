@@ -3,7 +3,8 @@ import "./styles.css";
 import {NavBar} from "../../components/NavBar";
 import {Footer} from "../../components/Footer";
 import {PresentationSection} from "./components/Presentation";
-import { FunctionSection } from "./components/Functions";
+import {FunctionSection} from "./components/Functions";
+import {UniversitiesSection} from "./components/Universities";
 
 export const Home = () => {
 
@@ -13,6 +14,7 @@ export const Home = () => {
             <div className="content">
                 <PresentationSection></PresentationSection>
                 <FunctionSection></FunctionSection>
+                <UniversitiesSection></UniversitiesSection>
                 <Footer/>
             </div>
         </div>
@@ -23,7 +25,7 @@ export const Home = () => {
 
             
             
-            <UniversitiesSection></UniversitiesSection>
+            
             <TutorialSection></TutorialSection>
             <MemberShipSection></MemberShipSection>
             <FaqSection></FaqSection>
