@@ -1,10 +1,11 @@
+import React from "react";
 import './App.css'
-import { LoginRegister } from './pages/Login'
+import { Home } from './pages/Home'
 
 function App() {
   return (
     <div>
-      <LoginRegister></LoginRegister>
+      <Home/>
     </div>
   )
 }
