@@ -4,6 +4,7 @@ import { Register } from './pages/Register'
 import { Home } from './pages/Home'
 import { Area } from './pages/Area'
 import { Language } from './pages/Language_A'
+import { AreaC } from  './pages/AreaC'
 import { RouterProvider ,createBrowserRouter } from 'react-router-dom'
 
 function App() {
@@ -27,6 +28,10 @@ function App() {
     {
       path: "/language",
       element: <Language/>
+    },
+    {
+      path: "/areac",
+      element: <AreaC/>
     }
   ]);
   return (
