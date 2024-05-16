@@ -7,7 +7,7 @@ export const Home = () => {
             <h1>Home</h1>
             <ul>
                 <li>
-                    <Link to={"/area"}>
+                    <Link to={"/areac"}>
                         Area
                     </Link>
                 </li>
