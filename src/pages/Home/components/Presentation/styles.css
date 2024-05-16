@@ -1,0 +1,63 @@
+.screen {
+    background-color: #4CAD95;
+    width: 100%;
+    height: 40rem;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.p_container {
+    flex: 4;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; 
+}
+
+.p_box {
+    width: 25rem;
+    text-align: left;
+}
+
+.box_item {
+    padding: 1rem;
+    color: #fff;
+}
+
+.p_title {
+    font-size: x-large;
+    font-weight: normal
+}
+
+.p_welcome {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.p_desc {
+    font-size: medium;
+}
+
+.p_button {
+    background-color: #21433B;
+    color:#fff;
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+
+.bg_container {
+    flex: 6;
+    position: relative;
+}
+
+.bg_img {
+    position: absolute;
+    bottom: 0;
+    right: 0; 
+    height: auto;
+}
+/*
+#4CAD95
+*/
