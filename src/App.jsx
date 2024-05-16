@@ -6,10 +6,36 @@ import { Register } from './pages/Register'
 import { Home } from './pages/Home'
 import { Area } from './pages/Area'
 import { Language } from './pages/Language_A'
-import { Unmsm } from './pages/Unmsm'
+import { AreaC } from  './pages/AreaC'
 import { RouterProvider ,createBrowserRouter } from 'react-router-dom'
 
 function App() {
+  const route = createBrowserRouter([
+    {
+      path: "/",
+      element: <Login />
+    },
+    {
+      path: "/register",
+      element: <Register />
+    },
+    {
+      path: "/home",
+      element: <Home/>
+    },
+    {
+      path: "/area",
+      element: <Area/>
+    },
+    {
+      path: "/language",
+      element: <Language/>
+    },
+    {
+      path: "/areac",
+      element: <AreaC/>
+    }
+  ]);
   return (
     <BrowserRouter> 
       <AppRouter></AppRouter>
