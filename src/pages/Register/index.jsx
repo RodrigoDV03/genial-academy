@@ -82,7 +82,7 @@ export const Register = () => {
                             <input type="password" name="password" value={formValues.password} onChange={handleChange} />
                         </div>
                         <p>{formErrors.password}</p>
-                        <div className="Register__Button">
+                        <div className="register__Button">
                             <Link to="/home" id={"Register__Link"}>Regístrate</Link>
                         </div>
 
