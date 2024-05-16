@@ -24,23 +24,20 @@
 .f_content {
     display: flex;
     flex-direction: row;
+    margin: 2.5rem auto;
 }
 
 .f_colum_1 {
-    flex: 4;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    margin-right: 6.25rem;
 }
 
 .f_colum_2 {
-    flex: 6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 60px
 }
 
 .f_title {
@@ -66,10 +63,14 @@
 
 .f_card_icon {
     border-radius: 50%;
-    margin: 0.8rem;
     border: none;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 4.8rem;
+    height: 4.0625rem;
+}
+
+.f_card_title{
+    margin-left: 1.875rem;
+    font-weight: 600;
 }
 
 .color_yellow {

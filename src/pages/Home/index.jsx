@@ -7,7 +7,6 @@ import {FunctionSection} from "./components/Functions";
 import {UniversitiesSection} from "./components/Universities";
 
 export const Home = () => {
-
     return (
         <div>
             <NavBar/>
@@ -25,7 +24,7 @@ export const Home = () => {
 
             
             
-            
+            <UniversitiesSection></UniversitiesSection>
             <TutorialSection></TutorialSection>
             <MemberShipSection></MemberShipSection>
             <FaqSection></FaqSection>

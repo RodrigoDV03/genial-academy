@@ -9,12 +9,12 @@ header{
     top: 0;
     left: 0;
     z-index: 1;
+    padding: 0 3rem;
 }
 
 .logo_container {
     margin: 1rem;
     display: flex;
-    flex-grow: 2;
     align-items: center;
     justify-items: center;
 }
@@ -44,6 +44,10 @@ header{
     color: #fff;
     text-decoration: none;
     display: inline-block;
+}
+
+.nav_link:hover{
+    outline: #21433B;
 }
 
 .action_button {

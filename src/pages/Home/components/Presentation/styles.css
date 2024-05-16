@@ -25,25 +25,29 @@
 }
 
 .p_title {
-    font-size: x-large;
+    font-size: 20px;
     font-weight: normal
 }
 
 .p_welcome {
-    font-size: xx-large;
+    font-size: 42px;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .p_desc {
     font-size: medium;
+    line-height: 30px;
 }
 
 .p_button {
     background-color: #21433B;
+    border: none;
     color:#fff;
+    font-weight: 500;
     margin: 1rem;
-    padding: 0.5rem;
-    border-radius: 1rem;
+    padding: 1rem 2rem;
+    border-radius: 3.125rem;
 }
 
 

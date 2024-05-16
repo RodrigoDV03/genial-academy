@@ -1,13 +1,13 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
-import "./stylesLogin.css";
+import "./stylesRegister.css";
 
-export const Login = () => {
-    
+export const Register = () => {
+
 // ---------------------------------------------------------------------
 
-    const initialLoginValues = {email:"", password:""};
-    const [formValues, setFormValues] = useState(initialLoginValues);
+    const initialRegisterValues = {name:"", lastname:"", email:"", password:""};
+    const [formValues, setFormValues] = useState(initialRegisterValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
 
@@ -32,6 +32,12 @@ export const Login = () => {
     const validate = (values) => {
         const errors = {}
         const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+        if(!values.name.trim()){
+            errors.name = 'Debes escribir tu nombre';
+        }
+        if(!values.lastname.trim()){
+            errors.lastname = 'Debes escribir tu apellido';
+        }
         if(!values.email.trim()){
             errors.email = 'Debes escribir un correo electrónico';
         } else if(!regex.test(values.email)){
@@ -46,18 +52,26 @@ export const Login = () => {
         return errors;
     }
 
-// ---------------------------------------------------------------------
-
     return (
         <div className="container">
-            <div className="login__image">
+            <div className="register__image">
             </div>
             <div className="wrapper">
                 <div className="form__box">
                     {Object.keys(formErrors).length === 0 && isSubmit ? (<div className="success">Sesión iniciada</div>) : ""}
                     <form onSubmit={handleSubmit}>
                         <h1>HOLA! GENIALACADEMY</h1>
-                        <h2>Iniciar Sesión</h2>
+                        <h2>Registrate</h2>
+                        <div className="input__box">
+                            <div className="input__title">Nombre:</div> 
+                            <input type="text" name="name" value={formValues.name} onChange={handleChange} />
+                        </div>
+                        <p>{formErrors.name}</p>
+                        <div className="input__box">
+                            <div className="input__title">Apellidos:</div> 
+                            <input type="text" name="lastname" value={formValues.lastname} onChange={handleChange} />
+                        </div>
+                        <p>{formErrors.lastname}</p>
                         <div className="input__box">
                             <div className="input__title">Correo electrónico:</div> 
                             <input type="email" name="email" value={formValues.email} onChange={handleChange} />
@@ -68,12 +82,12 @@ export const Login = () => {
                             <input type="password" name="password" value={formValues.password} onChange={handleChange} />
                         </div>
                         <p>{formErrors.password}</p>
-                        <div className="login__Button">
-                            <Link to="/home" id={"Login__Link"}>Ingresar</Link>
+                        <div className="register__Button">
+                            <Link to="/home" id={"Register__Link"}>Regístrate</Link>
                         </div>
 
-                    <div className="register__link">
-                        <p>¿No tienes una cuenta? <Link to="/register">Registrate</Link></p>
+                    <div className="login__link">
+                        <p>¿Ya tienes una cuenta? <Link to="/">Inicia Sesión</Link></p>
                     </div>
                     </form>
                 </div>

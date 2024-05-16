@@ -1,0 +1,98 @@
+.container{
+    background: url(/src/assets/images/Wave.png);
+    background-size: cover;
+    display: flex;
+}
+
+.login__image{
+    height: 800px;
+    width: 800px;
+    background-image: url(/src/assets/images/Login_image.png);
+    background-size: cover;
+    margin-bottom: 500px;
+    margin-left: 200px;
+}
+
+.wrapper{
+    margin: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+
+.wrapper .form__box{
+    padding: 40px;
+}
+
+form h1{
+    font-size: 30px;
+    text-align: center;
+    color: #4CAD95;
+    margin-bottom: 10px;
+}
+
+form h2{
+    font-size: 18px;
+    text-align: center;
+}
+
+form .input__box{
+    margin: 30px 0;
+}
+
+form .input__title{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.input__box input{
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #0009;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 20px 30px;
+}
+
+.login__Button{
+    padding: 20px 40px;
+    margin: auto;
+    padding-top: 20px;
+    background-color: #4CAD95;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer; 
+    transition: all 0.8s;
+}
+
+.login__Button:hover{
+    background-color: #296F5D;
+}
+
+#Login__Link{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+form .register__link{
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+}
+
+.register__link p{
+    color: #000;
+}
+
+.register__link p a{
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+.register__link p a:hover{
+    text-decoration: underline;
+}
