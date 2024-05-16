@@ -6,6 +6,7 @@ import {PresentationSection} from "./components/Presentation";
 import {FunctionSection} from "./components/Functions";
 import {UniversitiesSection} from "./components/Universities";
 import {TutorialSection} from "./components/Tutorial";
+import {MemberShipSection} from "./components/MemberShip";
 
 export const Home = () => {
 
@@ -17,6 +18,7 @@ export const Home = () => {
                 <FunctionSection></FunctionSection>
                 <UniversitiesSection></UniversitiesSection>
                 <TutorialSection></TutorialSection>
+                <MemberShipSection></MemberShipSection>
                 <Footer/>
             </div>
         </div>
@@ -29,7 +31,7 @@ export const Home = () => {
             
             
             
-            <MemberShipSection></MemberShipSection>
+            
             <FaqSection></FaqSection>
             <Footer></Footer>
 */
