@@ -4,8 +4,8 @@
     height: 40rem;
     display: flex;
     flex-direction: row;
+    margin-top: 6.25rem;
 }
-
 
 .p_container {
     flex: 4;

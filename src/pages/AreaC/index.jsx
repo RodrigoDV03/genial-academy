@@ -1,14 +1,19 @@
 import React from 'react';
 import './styles.css';
-
+import { Link } from 'react-router-dom';
+import { NavBar } from '../../components/NavBar';
+import { Footer } from '../../components/Footer';
 export const AreaC = () => {
     return (
         <div>
+            <header>
+                <NavBar></NavBar>
+            </header>
             <section id="section1">
                 <div id="contenedor1">
                     <div id="navigation">
                         <h4 id="btnunmsm">Unmsm &gt; Área C</h4>
-                        <input type="button" name="btnregresar" id="btnregresar" />
+                        <Link to={'/unmsm'}><button name="btnregresar" id="btnregresar"></button></Link>
                     </div>
                     <p><img src='/src/assets/images/principal.png' alt="Imagen Principal" id="imgprincipal" /></p>
                 </div>
@@ -49,10 +54,12 @@ export const AreaC = () => {
                         <img src='/src/assets/images/literatura.png' alt="Literatura"/>
                         <span>Literatura</span>
                     </div>
-                    <div class="circle-button">
-                        <img src='/src/assets/images/lenguaje.png' alt="Lenguaje"/>
-                        <span>Lenguaje</span>
-                    </div>
+                    <Link to={'/language'}>
+                        <div class="circle-button">
+                            <img src='/src/assets/images/lenguaje.png' alt="Lenguaje"/>
+                            <span>Lenguaje</span>
+                        </div>
+                    </Link>
                     <div class="circle-button">
                         <img src='/src/assets/images/rm.png' alt="Habilidad Matemática"/>
                         <span>Habilidad Matemática</span>
@@ -90,7 +97,7 @@ export const AreaC = () => {
                         <span>Biología</span>
                     </div>
                     <div class="circle-button">
-                        <img src='/src/assets/images/fisica.png' alt="Física"/>
+                        <img src='/src/assets/images/atomo.png' alt="Física"/>
                         <span>Física</span>
                     </div>
                 </div>
@@ -126,6 +133,9 @@ export const AreaC = () => {
                     </div>
                 </div>
             </section>
+            <footer>
+                <Footer></Footer>
+            </footer>
         </div>
     );
 }

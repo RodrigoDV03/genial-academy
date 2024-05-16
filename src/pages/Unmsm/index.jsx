@@ -1,4 +1,5 @@
 import "./styles-unmsm.css"
+import { Link } from "react-router-dom";
 
 export const Unmsm = () => {
     return (
@@ -99,7 +100,7 @@ export const Unmsm = () => {
             </div>
             <div className="areas__button">
               <div className="button__image">
-                <a href="#"><img src="/src/assets/images/technology.png" alt="" /></a>
+                <Link to = {'/areac'}><img src="/src/assets/images/technology.png" alt="" /></Link>
               </div>
               <div className="button__text">
                 <h4>Área C</h4>
