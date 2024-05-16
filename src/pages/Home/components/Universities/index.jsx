@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles.css";
 
 export const UniversitiesSection = () => {
@@ -9,10 +10,12 @@ export const UniversitiesSection = () => {
       </div>
       <div className="u_grid">
         <button className="u_card" onClick={console.log("unmsm")}>
-          <div className="u_card_img">
-            <img src="/src/assets/images/unmsm.png" alt="" />
-          </div>
-          <div className="u_card_title">UNMSM</div>
+          <Link to={'/unmsm'} className="link_unmsm">
+            <div className="u_card_img">
+              <img src="/src/assets/images/unmsm.png" alt="" />
+            </div>
+            <div className="u_card_title">UNMSM</div>
+          </Link>
         </button>
 
         <div className="u_card">

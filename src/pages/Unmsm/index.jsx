@@ -20,7 +20,7 @@ export const Unmsm = () => {
         </div>
       </div>
       <main>
-        <div className="main__steps">
+        <section className="main__steps">
           <h2>¿Cómo acceder al material de estudio?</h2>
           <div className="steps">
             <div className="steps__number">
@@ -64,8 +64,8 @@ export const Unmsm = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="main__card">
+        </section>
+        <section className="main__card">
           <div className="card">
             <img src="/src/assets/images/explora.png" alt="" />
             <div className="card__text">
@@ -75,8 +75,8 @@ export const Unmsm = () => {
               </button>
             </div>
           </div>
-        </div>
-        <div className="main__areas">
+        </section>
+        <section className="main__areas">
           <h2>Áreas</h2>
           <div className="areas">
             <div className="areas__button">
@@ -125,8 +125,8 @@ export const Unmsm = () => {
               </div>
             </div>
           </div>
-        </div>
-        <div className="main__card">
+        </section>
+        <section className="main__card">
           <h2>Información sobre el formato de exámenes de admisión</h2>
           <div className="card">
             <img src="/src/assets/images/informacion.png" className="card__img" alt="" />
@@ -137,7 +137,7 @@ export const Unmsm = () => {
               </button>
             </div>
           </div>
-        </div>
+        </section>
       </main>
     </div>
     );
