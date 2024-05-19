@@ -10,7 +10,6 @@ import {MemberShipSection} from "./components/MemberShip";
 import {FaqSection} from "./components/Faq";
 
 export const Home = () => {
-    const [showModal, setShowModal] = useState(false)
 
     return (
         <div>

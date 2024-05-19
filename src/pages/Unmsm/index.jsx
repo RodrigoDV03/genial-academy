@@ -1,10 +1,11 @@
 import "./styles-unmsm.css"
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { ModalExam } from "../ModalExam";
 import { NavBar } from "../../components/NavBar";
-import { Footer
-
- } from "../../components/Footer";
+import { Footer } from "../../components/Footer";
 export const Unmsm = () => {
+    const [showModal, setShowModal] = useState(false);
     return (
     <div>
       <NavBar></NavBar>
@@ -137,9 +138,16 @@ export const Unmsm = () => {
             <img src="/src/assets/images/informacion.png" className="card__img" alt="" />
             <div className="card__text">
               <p className="card__paragraph">¿Quisieras saber cuántas preguntas vienen por cada área? Descúbrelo con un solo clic</p>
-              <button className="card__button">
-                <a href="#">-&gt;</a>
-              </button>
+              <div className="buttonContainer">
+                <button onClick={() => setShowModal(!showModal)}>Estructura de examen de admisión</button>
+              </div>
+              
+              <ModalExam estado = {showModal} setEstado = {setShowModal}>
+                  <div className="Contenido">
+                      <h1>Estructura de examen de admisión por área</h1>
+                      <div className="img"></div>
+                  </div>
+              </ModalExam>
             </div>
           </div>
         </section>

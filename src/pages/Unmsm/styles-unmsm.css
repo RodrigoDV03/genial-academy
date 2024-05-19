@@ -171,3 +171,48 @@ body{
 .button__text h4{
     font-size: 22px;
 }
+
+.buttonContainer{
+    height: 40px;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.buttonContainer Button{
+    color: #fff;
+    margin-top: 2.5rem;
+    border: none;
+    padding: .9375rem 2.5rem;
+    background-color: #4CAD95;
+    border-radius: 3.125rem; 
+    transition: all 0.7s;
+}
+
+.buttonContainer Button:hover{
+    background-color: #296E5D;
+}
+.Contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    width: 900px;
+}
+
+.Contenido h1{
+    color: #000;
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.Contenido .img{
+    height: 400px;
+    width: 100%;
+    background-image: url(/src/assets/images/estructura_examen_unmsm.png);
+    background-size: cover;
+    background-position: center;
+}
