@@ -1,5 +1,4 @@
 .container{
-    height: 100vh;
     background: url(/src/assets/images/Wave.png);
     background-size: cover;
     display: flex;
@@ -34,12 +33,11 @@ form h1{
 }
 
 form h2{
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
 }
 
 form .input__box{
-    width: 85%;
     margin: 30px 0;
 }
 
@@ -50,7 +48,6 @@ form .input__title{
 
 .input__box input{
     width: 100%;
-    height: 20px;
     background-color: transparent;
     border: 1px solid #0009;
     border-radius: 10px;
@@ -58,21 +55,26 @@ form .input__title{
     padding: 20px 30px;
 }
 
-.Login__Button{
-    height: 40px;
-    width: 200px;
+.login__Button{
+    padding: 20px 40px;
     margin: auto;
     padding-top: 20px;
     background-color: #4CAD95;
     text-align: center;
     border-radius: 10px;
     cursor: pointer; 
+    transition: all 0.8s;
+}
+
+.login__Button:hover{
+    background-color: #296F5D;
 }
 
 #Login__Link{
     color: #fff;
     text-decoration: none;
     font-size: 20px;
+    font-weight: 500;
 }
 
 form .register__link{

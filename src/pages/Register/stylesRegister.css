@@ -35,12 +35,11 @@ form h1{
 
 form h2{
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
 }
 
 form .input__box{
-    width: 85%;
     margin: 20px 0;
     font-size: 16px;
 }
@@ -56,21 +55,26 @@ form .input__box{
     padding: 20px 30px;
 }
 
-.Register__Button{
-    height: 40px;
-    width: 200px;
+.register__Button{
+    padding: 1.25rem 2.5rem;
     margin: auto;
     padding-top: 20px;
     background-color: #4CAD95;
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
+    transition: all 0.8s;
+}
+
+.register__Button:hover{
+    background-color: #296F5D;
 }
 
 #Register__Link{
     color: #fff;
     text-decoration: none;
     font-size: 20px;
+    font-weight: 500;
 }
 
 form .login__link{

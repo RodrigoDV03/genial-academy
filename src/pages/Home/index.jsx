@@ -1,38 +1,40 @@
-import React, { useState } from 'react'
-import { ModalExam } from '../ModalExam'
-import { Link } from 'react-router-dom'
-import './styles.css'
-
+import React from "react";
+import "./styles.css";
+import {NavBar} from "../../components/NavBar";
+import {Footer} from "../../components/Footer";
+import {PresentationSection} from "./components/Presentation";
+import {FunctionSection} from "./components/Functions";
+import {UniversitiesSection} from "./components/Universities";
+import {TutorialSection} from "./components/Tutorial";
+import {MemberShipSection} from "./components/MemberShip";
+import {FaqSection} from "./components/Faq";
 
 export const Home = () => {
     const [showModal, setShowModal] = useState(false)
 
     return (
-        <div className="container">
-            <h1>Home</h1>
-            <ul>
-                <li>
-                    <Link to={"/area"}>
-                        Area
-                    </Link>
-                </li>
-                <li>
-                    <Link to={"/language"}>
-                        Lenguaje
-                    </Link>
-                </li>
-            </ul>
-
-            <div className="buttonContainer">
-                <button onClick={() => setShowModal(!showModal)}>Ventana modal</button>
+        <div>
+            <NavBar/>
+            <div className="content">
+                <PresentationSection></PresentationSection>
+                <FunctionSection></FunctionSection>
+                <UniversitiesSection></UniversitiesSection>
+                <TutorialSection></TutorialSection>
+                <MemberShipSection></MemberShipSection>
+                <FaqSection></FaqSection>
+                <Footer/>
             </div>
-            
-            <ModalExam estado = {showModal} setEstado = {setShowModal}>
-                <div className="Contenido">
-                    <h1>Estructura de examen de admisión por área</h1>
-                    <div className="img"></div>
-                </div>
-            </ModalExam>
         </div>
     )
-}
+};
+
+/*
+
+            
+            
+            <UniversitiesSection></UniversitiesSection>
+            <TutorialSection></TutorialSection>
+            <MemberShipSection></MemberShipSection>
+            <FaqSection></FaqSection>
+            <Footer></Footer>
+*/

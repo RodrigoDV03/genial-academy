@@ -124,8 +124,7 @@ main{
 
 .Areas__container{
     background-color: #90CDBE;
-    height: 600px;
-    width: 500px;
+    padding: 20px;
     margin: 50px;
     border-radius: 10px;
 }
@@ -147,7 +146,6 @@ main{
 
 .Area__Careers{
     margin: 0px 50px;
-    height: 350px;
     color: #000;
 }
 

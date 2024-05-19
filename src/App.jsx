@@ -1,9 +1,12 @@
+import { BrowserRouter, Router } from 'react-router-dom';
+import { AppRouter } from './Router';
 import './App.css'
 import { Login } from './pages/Login'
 import { Register } from './pages/Register'
 import { Home } from './pages/Home'
 import { Area } from './pages/Area'
 import { Language } from './pages/Language_A'
+import { AreaC } from  './pages/AreaC'
 import { RouterProvider ,createBrowserRouter } from 'react-router-dom'
 
 function App() {
@@ -27,12 +30,16 @@ function App() {
     {
       path: "/language",
       element: <Language/>
+    },
+    {
+      path: "/areac",
+      element: <AreaC/>
     }
   ]);
   return (
-    <div>
-      <RouterProvider router={route}></RouterProvider>
-    </div>
+    <BrowserRouter> 
+      <AppRouter></AppRouter>
+    </BrowserRouter>
   )
 }
 

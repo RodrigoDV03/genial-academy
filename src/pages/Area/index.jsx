@@ -1,28 +1,12 @@
 import "./styles.css"
 import { Link } from "react-router-dom"
+import { NavBar } from "../../components/NavBar";
+import { Footer } from "../../components/Footer";
 
 export const Area = () => {
     return (
         <div>
-            <header>
-                <div className="header">
-                    <div className="nav__logo-container">
-                        <div className="nav__logo"> 
-                            <img src="/src/assets/images/GENIALACADEMY_LOGO.png" alt="" />
-                        </div>
-                    </div>
-                    <nav className="nav">
-                        <div className="nav__ul-container">
-                            <ul className="nav__ul">
-                                <li className="nav__item"><Link to="/home" className="nav__link">Inicio</Link></li>
-                                <li className="nav__item"><a href="#" className="nav__link">Universidades</a></li>
-                                <li className="nav__item"><a href="#" className="nav__link">Foro</a></li>
-                                <li className="nav__item"><a href="#" className="nav__link">Biblioteca Virtual</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </header>
+            <NavBar></NavBar>
             <main>
                 <div className="Content">
                     <div className="Content__Text">
@@ -149,41 +133,7 @@ export const Area = () => {
                     </div>
                 </div>
             </main>
-            <footer>
-                <div className="footer__container">
-                        <div className="footer__logo"> 
-                            <img src="/src/assets/images/GENIALACADEMY_LOGO.png" />
-                        </div>
-                    <div className="footer__list">
-                        <ul>
-                            <li>Política de privacidad</li>
-                            <li>Ayuda</li>
-                            <li>Acuerdo de suscripción</li>
-                            <li>Sobre nosotros</li>
-                            <li>Dispositivos compatibles</li>
-                        </ul>
-                    </div>
-                    <div className="social__media">
-                        <div className="social__media-container">
-                            <div className="social__media-icon">
-                                <div className="social__media-image">
-                                    <img src="/src/assets/images/facebook.png"/>
-                                </div>
-                            </div>
-                            <div className="social__media-icon">
-                                <div className="social__media-image">
-                                    <img src="/src/assets/images/instagram.png"/>
-                                </div>
-                            </div>
-                            <div className="social__media-icon">
-                                <div className="social__media-image">
-                                    <img src="/src/assets/images/twitter.png"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer></Footer>
         </div>
     );
 }

@@ -68,8 +68,8 @@ export const Login = () => {
                             <input type="password" name="password" value={formValues.password} onChange={handleChange} />
                         </div>
                         <p>{formErrors.password}</p>
-                        <div className="Login__Button">
-                            <Link to="/home" id={"Login__Link"}>Iniciar Sesión</Link>
+                        <div className="login__Button">
+                            <Link to="/home" id={"Login__Link"}>Ingresar</Link>
                         </div>
 
                     <div className="register__link">
