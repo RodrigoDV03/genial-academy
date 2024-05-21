@@ -1,7 +1,7 @@
 import React from 'react'
 import './styles.css'
 
-export const ModalExam = ({children, estado, setEstado}) => {
+export const Modal = ({children, estado, setEstado}) => {
     return (
         <div>
             {estado &&

@@ -37,6 +37,10 @@ form h2{
     text-align: center;
 }
 
+form p{
+    color: #f00;
+}
+
 form .input__box{
     margin: 30px 0;
 }
