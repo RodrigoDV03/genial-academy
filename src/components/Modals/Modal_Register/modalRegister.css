@@ -44,6 +44,7 @@
 }
 
 .Register_button {
+    text-decoration: none;
     height: 50px;
     width: 100px;
     background-color: #8FC6EF;
@@ -52,8 +53,11 @@
     padding: 10px;
 }
 
+.Register_button:hover {
+    background-color: #6DA4CD;
+}
+
 .Register-link{
-    text-decoration: none;
     font-size: 18px;
     font-weight: bold;
     color: #fff;

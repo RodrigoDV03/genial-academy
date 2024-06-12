@@ -50,10 +50,14 @@
     border-radius: 10px;
     margin: 20px;
     padding: 10px;
+    text-decoration: none;
+}
+
+.Login_button:hover {
+    background-color: #6DA4CD;
 }
 
 .Login-link{
-    text-decoration: none;
     font-size: 18px;
     font-weight: bold;
     color: #fff;
