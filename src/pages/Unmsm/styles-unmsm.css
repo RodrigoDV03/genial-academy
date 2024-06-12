@@ -195,26 +195,3 @@ body{
     background-color: #296E5D;
     cursor: pointer;
 }
-
-.Contenido{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 500px;
-    width: 840px;
-}
-
-.Contenido h1{
-    color: #000;
-    font-size: 32px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-.Contenido .img{
-    height: 400px;
-    width: 100%;
-    background-image: url(/src/assets/images/estructura_examen_unmsm.png);
-    background-size: cover;
-    background-position: center;
-}

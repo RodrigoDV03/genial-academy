@@ -60,8 +60,17 @@ form .input__title{
     padding: 20px 30px;
 }
 
+button.toggle__password{
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+    color: #4CAD95;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
 .login__Button{
-    margin: 10px 120px;
+    margin: 10px 150px;
     padding: 20px 40px;
     padding-top: 20px;
     background-color: #4CAD95;

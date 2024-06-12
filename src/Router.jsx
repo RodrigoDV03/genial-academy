@@ -6,7 +6,6 @@ import { Login } from "./pages/Login"
 import { Register } from "./pages/Register"
 import { Unmsm } from "./pages/Unmsm"
 import { AreaC } from "./pages/AreaC"
-import { Modal } from "./pages/Modal"
 
 export const AppRouter = () => {
     return (
@@ -19,7 +18,6 @@ export const AppRouter = () => {
         <Route path="/unmsm" element={<Unmsm />}></Route>
         <Route path="/area" element={<Area/>}></Route>
         <Route path="/areac" element={<AreaC/>}></Route>
-        <Route path="/modal" element={<Modal/>}></Route>
       </Routes>
     )
   }

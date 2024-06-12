@@ -64,9 +64,20 @@ header{
     align-items: center;
     cursor: pointer;
 }
-  
+
 .action_button:hover {
     background-color: #ccc;
+}
+
+.open-modal-button{
+    margin: 1rem;
+    border: none;
+    border-radius: 50%; 
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #fff;
+    align-items: center;
+    cursor: pointer;
 }
 
 

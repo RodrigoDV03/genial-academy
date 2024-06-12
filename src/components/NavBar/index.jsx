@@ -1,8 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import ModalUser from "../Modals/Modal_User/modalUser";
 import "./styles.css"
 
 export const NavBar = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <header>
         <div className="logo_container">
@@ -28,9 +40,10 @@ export const NavBar = () => {
             </ul>
         </nav>
         <div className="actions_container">
-            <button className="action_button"></button>
-            <button className="action_button"></button>
+            <button onClick={handleOpenModal} className="open-modal-button">
+            </button>
         </div>
+        <ModalUser isOpen={isModalOpen} onClose={handleCloseModal} />
     </header>
   );
 };

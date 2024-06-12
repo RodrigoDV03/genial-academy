@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./stylesRegister.css";
+import ModalRegister from "../../components/Modals/Modal_Register/modalRegister";
 
 export const Register = () => {
 
@@ -8,7 +9,7 @@ export const Register = () => {
     const [formValues, setFormValues] = useState(initialRegisterValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-    const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false); // Nuevo estado para controlar la visibilidad de la contraseña
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -20,10 +21,6 @@ export const Register = () => {
         const errors = validate(formValues);
         setFormErrors(errors);
         setIsSubmit(true);
-
-        if (Object.keys(errors).length === 0) {
-            navigate("/home");  // Redirige al usuario si no hay errores
-        }
     }
 
     useEffect(() => {
@@ -55,12 +52,29 @@ export const Register = () => {
         return errors;
     }
 
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const handleOpenModal = () => {
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+    };
+
+    const toggleShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
+
     return (
         <div className="container">
             <div className="register__image"></div>
             <div className="wrapper">
                 <div className="form__box">
-                    {Object.keys(formErrors).length === 0 && isSubmit && (<div className="success">Registro exitoso</div>)}
+                    {Object.keys(formErrors).length === 0 && isSubmit && 
+                    (
+                        <ModalRegister isOpen={isModalOpen} onClose={handleCloseModal} />
+                    )}
                     <form onSubmit={handleSubmit}>
                         <h1>HOLA! GENIALACADEMY</h1>
                         <h2>Regístrate</h2>
@@ -81,11 +95,21 @@ export const Register = () => {
                         <p className="error-message">{formErrors.email}</p>
                         <div className="input__box">
                             <div className="input__title">Contraseña:</div> 
-                            <input type="password" name="password" value={formValues.password} onChange={handleChange} />
+                            <div className="password__input__container">
+                                <input 
+                                    type={showPassword ? "text" : "password"} 
+                                    name="password" 
+                                    value={formValues.password} 
+                                    onChange={handleChange} 
+                                />
+                                <button type="button" className="toggle__password" onClick={toggleShowPassword}>
+                                    {showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+                                </button>
+                            </div>
                         </div>
                         <p className="error-message">{formErrors.password}</p>
 
-                        <button className="register__Button">
+                        <button className="register__Button" onClick={handleOpenModal}>
                             Regístrate
                         </button>        
 
