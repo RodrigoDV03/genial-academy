@@ -20,6 +20,7 @@ export const Register = () => {
         const errors = validate(formValues);
         setFormErrors(errors);
         setIsSubmit(true);
+        console.log(formValues);
     }
 
     useEffect(() => {
