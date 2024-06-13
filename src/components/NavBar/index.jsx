@@ -6,6 +6,7 @@ import "./styles.css"
 
 export const NavBar = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const username = localStorage.getItem("username");
 
   const handleOpenModal = () => {
     setModalOpen(true);
@@ -40,6 +41,7 @@ export const NavBar = () => {
         <div className="actions_container">
             <button onClick={handleOpenModal} className="open-modal-button">
             </button>
+            <span>Bienvenido, {username}</span>
         </div>
         <ModalUser isOpen={isModalOpen} onClose={handleCloseModal} />
     </header>

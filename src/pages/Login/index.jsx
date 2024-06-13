@@ -30,6 +30,7 @@ export const Login = () => {
                 });
                 if(response.status === 200){
                     setIsSubmit(true);
+                    localStorage.setItem("username", formValues.username);
                     setModalOpen(true);
                 }
                 else{
