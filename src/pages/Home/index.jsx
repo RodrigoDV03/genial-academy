@@ -10,6 +10,7 @@ import {MemberShipSection} from "./components/MemberShip";
 import {FaqSection} from "./components/Faq";
 
 export const Home = () => {
+
     return (
         <div>
             <NavBar/>

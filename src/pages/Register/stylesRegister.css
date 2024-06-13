@@ -57,10 +57,12 @@ form .input__box{
 
 .register__Button{
     padding: 1.25rem 2.5rem;
-    margin: auto;
+    margin: 10px 120px;
     padding-top: 20px;
     background-color: #4CAD95;
+    color: #fff;
     text-align: center;
+    border: none;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.8s;
@@ -68,6 +70,11 @@ form .input__box{
 
 .register__Button:hover{
     background-color: #296F5D;
+}
+
+p.error-message{
+    color: red;
+    font-size: 14px;
 }
 
 #Register__Link{
