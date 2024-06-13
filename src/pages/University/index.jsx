@@ -181,7 +181,7 @@ export const University = () => {
               <div className="buttonContainer">
                 <button onClick={handleOpenModal}>Estructura de examen de admisión</button>
               </div>
-              <ModalExam uniId={uni_id} isOpen={isModalOpen} onClose={handleCloseModal} />
+              <ModalExam isOpen={isModalOpen} onClose={handleCloseModal} />
             </div>
           </div>
         </section>
