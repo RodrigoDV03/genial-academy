@@ -21,14 +21,14 @@ export const NavBar = () => {
                 </Link>
               </li>
               <li className="nav_item">
-                <Link to={''} className="nav_link">
+                <Link to={'/library'} className="nav_link">
                   Biblioteca Virtual
                 </Link>
               </li>
             </ul>
         </nav>
         <div className="actions_container">
-            <button className="action_button"></button>
+            <button className="action_button"><img src='/src/assets/images/user.png' alt="Imagen Principal" id="imgprincipal" /></button>
             <button className="action_button"></button>
         </div>
     </header>

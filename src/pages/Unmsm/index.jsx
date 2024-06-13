@@ -9,7 +9,7 @@ export const Unmsm = () => {
     <div>
       <NavBar></NavBar>
       <div>
-        <div className="banner">
+        <div className="banner__unmsm">
           <figure className="banner__figure">
             <img src="/src/assets/images/header1.png" className="figure__img" alt="Banner" />
           </figure>
@@ -76,7 +76,7 @@ export const Unmsm = () => {
             <div className="card__text">
               <p className="card__paragraph">Explora, Sueña, Descubre el área que pertenece tu carrera con un clic</p>
               <button className="card__button">
-                <a href="#">Descubre tu area</a>
+                <a href="/area">Descubre tu area</a>
               </button>
             </div>
           </div>

@@ -9,7 +9,7 @@ export const TutorialSection = () => {
       </div>
       <div className="t_video_container">
         <div className="square"></div>
-        <iframe className="t_video" src="https://www.youtube.com/embed/yG7MPEQm1-w" frameborder="0"></iframe>
+        <iframe className="t_video" width="560" height="315" src="https://www.youtube.com/embed/wGxDfSWC4Ww?si=SFSHjrOQzIZN7bW_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <div className="square"></div>
       </div>
     </div>
