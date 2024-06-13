@@ -94,7 +94,7 @@ export const University = () => {
     <div>
       <NavBar></NavBar>
       <div>
-        <div className="banner">
+        <div className="banner__unmsm">
           <figure className="banner__figure">
             <img src="/src/assets/images/header1.png" className="figure__img" alt="Banner" />
           </figure>

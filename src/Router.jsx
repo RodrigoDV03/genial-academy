@@ -6,6 +6,7 @@ import { Login } from "./pages/Login"
 import { Register } from "./pages/Register"
 import { University } from "./pages/University"
 import { Area } from "./pages/Area"
+import { Library } from "./pages/Library"
 
 export const AppRouter = () => {
     return (
@@ -19,7 +20,7 @@ export const AppRouter = () => {
         <Route path="/home/:uni_id/:area_id" element={<Area/>}></Route>
         <Route path="/home/:uni_id/:area_id/:theme_id" element={<Course/>}></Route>
         <Route path="/home/:uni_id/:area_id/:theme_id/:level_id" element={<Home/>}></Route>
-
+        <Route path="/library" element={<Library />}></Route>
       </Routes>
     )
   }
