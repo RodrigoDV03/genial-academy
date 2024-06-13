@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./stylesLogin.css";
 import ModalLogin from "../../components/Modals/Modal_Login/modalLogin";
 
 export const Login = () => {
-    const initialLoginValues = { email: "", password: "" };
+    const initialLoginValues = { username: "", password: "" };
     const [formValues, setFormValues] = useState(initialLoginValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
-    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -31,11 +30,8 @@ export const Login = () => {
 
     const validate = (values) => {
         const errors = {};
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-        if (!values.email.trim()) {
-            errors.email = 'Debes escribir un correo electrónico';
-        } else if (!regex.test(values.email)) {
-            errors.email = 'Debes escribir un correo electrónico válido';
+        if (!values.username.trim()) {
+            errors.username = 'Debes escribir un nombre de usuario';
         }
         if (!values.password.trim()) {
             errors.password = 'Debes escribir una contraseña';
@@ -72,10 +68,10 @@ export const Login = () => {
                         <h1>HOLA! GENIALACADEMY</h1>
                         <h2>Iniciar Sesión</h2>
                         <div className="input__box">
-                            <div className="input__title">Correo electrónico:</div>
-                            <input type="email" name="email" value={formValues.email} onChange={handleChange} />
+                            <div className="input__title">Nombre de usuario:</div>
+                            <input type="text" name="username" value={formValues.username} onChange={handleChange} />
                         </div>
-                        <p className="error-message">{formErrors.email}</p>
+                        <p className="error-message">{formErrors.username}</p>
                         <div className="input__box">
                             <div className="input__title">Contraseña:</div>
                             <div className="password__input__container">
