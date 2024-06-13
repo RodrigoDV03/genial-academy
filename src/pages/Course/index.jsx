@@ -1,11 +1,11 @@
 import "./styles.css"
-import { Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import { useState } from "react";
 import { NavBar } from "../../components/NavBar";
 import { Footer } from "../../components/Footer";
 import ModalQuestions from "../../components/Modals/Modal_Questions/modalQuestions";
 
-export const Language = () => {
+export const Course = () => {
     const [isModalOpen, setModalOpen] = useState(false);
 
     const handleOpenModal = () => {
@@ -15,6 +15,7 @@ export const Language = () => {
     const handleCloseModal = () => {
         setModalOpen(false);
     };
+
     return (
         <div>
             <NavBar></NavBar>
@@ -136,4 +137,4 @@ export const Language = () => {
     );
 }
 
-export default Language;
+export default Course;

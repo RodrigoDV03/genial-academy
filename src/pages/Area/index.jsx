@@ -1,139 +1,164 @@
-import "./styles.css"
-import { Link } from "react-router-dom"
-import { NavBar } from "../../components/NavBar";
-import { Footer } from "../../components/Footer";
+import React from 'react';
+import './styles.css';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { NavBar } from '../../components/NavBar';
+import { Footer } from '../../components/Footer';
 
 export const Area = () => {
+
+    const navigate = useNavigate();
+    const params = useParams();
+    const {uni_id, area_id} = params;
+
+    function getCoursesById(uni_id, area_id) {
+        return [
+            {
+              id: 'aritmetica',
+              name: 'Aritmética'
+            },
+            {
+              id: 'geometria',
+              name: 'Geometría'
+            },
+            {
+              id: 'algebra',
+              name: 'Álgebra'
+            },
+            {
+              id: 'trigonometria',
+              name: 'Trigonometría'
+            },
+            {
+              id: 'filosofia',
+              name: 'Filosofía'
+            },
+            {
+              id: 'literatura',
+              name: 'Literatura'
+            },
+            {
+              id: 'lenguaje',
+              name: 'Lenguaje'
+            },
+            {
+              id: 'habilidad_matematica',
+              name: 'Habilidad Matemática'
+            },
+            {
+              id: 'historia_universal',
+              name: 'Historia Universal'
+            },
+            {
+              id: 'historia_peru',
+              name: 'Historia del Perú'
+            },
+            {
+              id: 'psicologia',
+              name: 'Psicología'
+            },
+            {
+              id: 'economia',
+              name: 'Economía'
+            },
+            {
+              id: 'quimica',
+              name: 'Química'
+            },
+            {
+              id: 'civica',
+              name: 'Cívica'
+            },
+            {
+              id: 'biologia',
+              name: 'Biología'
+            },
+            {
+              id: 'fisica',
+              name: 'Física'
+            }
+          ];
+    }
+
+    const COURSES = getCoursesById(uni_id, area_id);
+
+    function courseCard(course) {
+        return <Link to={course.id} className='link'>
+            <div class="circle-button">
+                <img src={`/src/assets/images/${course.id}.png`} alt={course.name}/>
+                <span>{course.name}</span>
+            </div>
+        </Link>
+    }
+
+    function generateGrid() {
+        const html = [];
+        COURSES.forEach(course => {
+            html.push(
+                courseCard(course)
+            );
+        });
+        return html;
+    }
+
     return (
         <div>
             <NavBar></NavBar>
-            <main>
-                <div className="Content">
-                    <div className="Content__Text">
-                        <h2>Descubre al área que perteneces</h2>
-                        <p>
-                            Explorar tu camino académico nunca fue tan emocionante. Aquí, te invitamos a sumergirte en cinco fascinantes secciones, cada una repleta de carreras y oportunidades únicas, descubre a que área pertenece la carrera en la cuál postulas.
-                        </p>
+            <section id="section1">
+                <div id="contenedor1">
+                    <div id="navigation">
+                        <h4 id="btnunmsm">{uni_id} &gt; {area_id}</h4>
+                        <button name="btnregresar" id="btnregresar" onClick={() => navigate(-1)}></button>
                     </div>
-                    <div className="Content__image">
+                    <p><img src='/src/assets/images/principal.png' alt="Imagen Principal" id="imgprincipal" /></p>
+                </div>
+                <div id="contenedor2">
+                    <h1 id="titulo">BIENVENIDO AL<br /> {area_id}</h1>
+                    <div id="container">
+                        <h3>En esta sección encontrarás material educativo para <br />ayudar a tu preparación referente al área de <br />{area_id}.</h3>
                     </div>
                 </div>
-                <div className="Areas">
-                    <div className="Areas__container">
-                        <div className="Area__title">
-                            <div className="Area__Letter">Área A: </div>
-                            <div className="Area__Name">Ciencias de la Salud</div>
-                        </div>
-                        <div className="Area__Careers">
-                            <ul>
-                                <li>Medicina Humana</li>
-                                <li>Obstetricía</li>
-                                <li>Enfermería</li>
-                                <li>Tecnología Médica</li>
-                                <li>Laboratorio Clínico y Anatomía Patológica</li>
-                                <li>Terapia física y rehabilitación</li>
-                                <li>Radiología</li>
-                                <li>Psicología Organizacional y de la Gestión Humana</li>
-                                <li>Terapia ocupacional</li>
-                                <li>Nutrición</li>
-                                <li>Farmacia y Bioquímica</li>
-                                <li>Ciencias de los Alimentos</li>
-                                <li>Toxicología</li>
-                                <li>Odontología</li>
-                                <li>Medicina Veterinaria</li>
-                                <li>Psicología</li>
-                            </ul>
-                        </div>
+            </section>
+
+            <section id="section2">
+                <h1 id="titulo2">Cursos</h1>
+                <div className="button-container" id="button-container1">
+                    {generateGrid()}
+                </div>
+            </section>
+            <section id="section3">
+                <h1 id="titulo3">Exámenes de admisión</h1>
+                <div className="exam-container" id="exam-container1">
+                    <div className="exam-button">
+                        <img src='/src/assets/images/lista.png' alt="2020-I" />
+                        <span>2020-I</span>
                     </div>
-                    <div className="Areas__container">
-                        <div className="Area__title">
-                            <div className="Area__Letter">Área B: </div>
-                            <div className="Area__Name">Ciencias Básicas</div>
-                        </div>
-                        <div className="Area__Careers">
-                            <ul>
-                                <li>Química</li>
-                                <li>Ciencias Biológicas</li>
-                                <li>Genética y Biotecnología</li>
-                                <li>Microbiología y Parasitología</li>
-                                <li>Física</li>
-                                <li>Matemática</li>
-                                <li>Estadística</li>
-                                <li>Investigación Operativa</li>
-                                <li>Computación Científica</li>
-                            </ul>
-                        </div>
+                    <div className="exam-button">
+                        <img src='/src/assets/images/lista.png'  alt="2020-II" />
+                        <span>2020-II</span>
                     </div>
-                    <div className="Areas__container">
-                        <div className="Area__title">
-                            <div className="Area__Letter">Área C: </div>
-                            <div className="Area__Name">Ingenierías</div>
-                        </div>
-                        <div className="Area__Careers">
-                            <ul>
-                                <li>Ingienería Química</li>
-                                <li>Ingienería Agroindustrial</li>
-                                <li>Ingienería Mecánica de Fluidos</li>
-                                <li>Ingienería Geologica</li>
-                                <li>Ingieneria de Minas</li>
-                                <li>Ingieneria Metalurgia</li>
-                                <li>Ingieneria Ambiental</li>
-                                <li>Ingieneria  Industrial</li>
-                                <li>Ingieneria Textil y Confecciones</li>
-                                <li>Ingieneria de Seguridad y Salud de trabajo</li>
-                                <li>Ingieneria Electronica</li>
-                                <li>Ingieneria Electrica</li>
-                                <li>Ingieneria de telecomunicaciones</li>
-                                <li>Ingieneria de Sistemas</li>
-                                <li>Ingieneria de Software</li>
-                                <li>Ingieneria Civil</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="Areas__container">
-                        <div className="Area__title">
-                            <div className="Area__Letter">Área D: </div>
-                            <div className="Area__Name">Ciencias Económicas y de la Gestión</div>
-                        </div>
-                        <div className="Area__Careers">
-                            <ul>
-                                <li>Administración</li>
-                                <li>Administración de Turismo</li>
-                                <li>Administración de Negocios Internacionales</li>
-                                <li>Contabilidad</li>
-                                <li>Gestión Tributaria</li>
-                                <li>Auditoria Empresarial y del Sector Público</li>
-                                <li>Economía</li>
-                                <li>Economía Pública</li>
-                                <li>Economía Internacional</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="Areas__container">
-                        <div className="Area__title">
-                            <div className="Area__Letter">Área E: </div>
-                            <div className="Area__Name">Humanidades</div>
-                        </div>
-                        <div className="Area__Careers">
-                            <ul>
-                                <li>Literatura</li>
-                                <li>Filosofía</li>
-                                <li>Lingüística</li>
-                                <li>Comunicación social</li>
-                                <li>Arte</li>
-                                <li>Conservación y Restauración</li>
-                                <li>Bibliotecología y Ciencias de la Información</li>
-                                <li>Danza</li>
-                                <li>Educación Inicial</li>
-                                <li>Educación Primaria</li>
-                                <li>Educación Secundaria</li>
-                                <li>Educación Física</li>
-                            </ul>
-                        </div>
+                    <div className="exam-button">
+                        <img src='/src/assets/images/lista.png'  alt="2021-I" />
+                        <span>2021-I</span>
                     </div>
                 </div>
-            </main>
+                <div class="exam-container" id="exam-container2">
+                    <div class="exam-button">
+                        <img src='/src/assets/images/lista.png' alt="2021-II"/>
+                        <span>2021-II</span>
+                    </div>
+                    <div class="exam-button">
+                        <img src='/src/assets/images/lista.png' alt="2022-I"/>
+                        <span>2022-I</span>
+                    </div>
+                    <div class="exam-button">
+                        <img src='/src/assets/images/lista.png' alt="2022-II"/>
+                        <span>2022-II</span>
+                    </div>
+                </div>
+            </section>
             <Footer></Footer>
         </div>
     );
 }
+
+
