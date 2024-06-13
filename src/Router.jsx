@@ -20,8 +20,8 @@ export const AppRouter = () => {
         <Route path="/home/:uni_id" element={<University />}></Route>
         <Route path="/home/:uni_id/area" element={<DiscoverArea/>}></Route>
         <Route path="/home/:uni_id/:area_id" element={<Area/>}></Route>
-        <Route path="/home/:uni_id/:area_id/:theme_id" element={<Course/>}></Route>
-        <Route path="/home/:uni_id/:area_id/:theme_id/:level_id" element={<Home/>}></Route>
+        <Route path="/home/:uni_id/:area_id/:course_id" element={<Course/>}></Route>
+        <Route path="/home/:uni_id/:area_id/:course_id/:theme_id/:level_id" element={<Level/>}></Route>
         <Route path="/library" element={<Library />}></Route>
         <Route path="/todolist" element={<ToDoList />}></Route>
       </Routes>
