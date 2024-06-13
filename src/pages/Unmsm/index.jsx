@@ -1,11 +1,19 @@
 import "./styles-unmsm.css"
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Modal } from "../Modal";
 import { NavBar } from "../../components/NavBar";
 import { Footer } from "../../components/Footer";
+import ModalExam from "../../components/Modals/Modal_Exam/modalExam";
 export const Unmsm = () => {
-    const [showModal, setShowModal] = useState(false);
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const handleOpenModal = () => {
+      setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+      setModalOpen(false);
+    };
     return (
     <div>
       <NavBar></NavBar>
@@ -139,32 +147,9 @@ export const Unmsm = () => {
             <div className="card__text">
               <p className="card__paragraph">¿Quisieras saber cuántas preguntas vienen por cada área? Descúbrelo con un solo clic</p>
               <div className="buttonContainer">
-                <button onClick={() => setShowModal(!showModal)}>Estructura de examen de admisión</button>
+                <button onClick={handleOpenModal}>Estructura de examen de admisión</button>
               </div>
-              
-              <Modal estado = {showModal} setEstado = {setShowModal}>
-                  <div className="Contenido">
-                      <h1>Estructura de examen de admisión por área</h1>
-                      <div className="img"></div>
-                  </div>
-              </Modal>
-              {/* <Modal estado = {showModal} setEstado = {setShowModal}>
-                  <div className="LevelContent">
-                      <h1>Preguntas</h1>
-                      <div className="levelsContainer">
-                          <div className="level">
-                              <h2>Basico</h2>
-                          </div>
-                          <div className="level">
-                              <h2>Intermedio</h2>
-                          </div>
-                          <div className="level">
-                              <h2>Avanzado</h2>
-                          </div>
-                      </div>
-                  </div>
-              </Modal> */}
-              
+              <ModalExam isOpen={isModalOpen} onClose={handleCloseModal} />
             </div>
           </div>
         </section>
