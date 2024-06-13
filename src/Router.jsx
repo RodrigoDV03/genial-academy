@@ -6,6 +6,7 @@ import { Login } from "./pages/Login"
 import { Register } from "./pages/Register"
 import { University } from "./pages/University"
 import { Area } from "./pages/Area"
+import Level from "./pages/Level"
 import { Library } from "./pages/Library"
 import { ToDoList } from "./pages/ToDoList"
 

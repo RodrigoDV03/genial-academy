@@ -1,8 +1,12 @@
 import React, { useEffect } from 'react';
 import './modalExam.css';
+import { useParams } from 'react-router-dom';
 
-const ModalExam = ({ uniId, isOpen, onClose }) => {
+const ModalExam = ({isOpen, onClose }) => {
     if (!isOpen) return null;
+
+    const params = useParams();
+    const {uniId} = params;
 
     return (
         <div className="modal-overlay">
