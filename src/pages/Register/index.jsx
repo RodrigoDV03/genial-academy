@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./stylesRegister.css";
 import ModalRegister from "../../components/Modals/Modal_Register/modalRegister";
 
 export const Register = () => {
-
-    const initialRegisterValues = { name: "", lastname: "", email: "", password: "" };
+    const initialRegisterValues = { name: "", lastname: "", username: "", email: "", password: "" };
     const [formValues, setFormValues] = useState(initialRegisterValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-    const [showPassword, setShowPassword] = useState(false); // Nuevo estado para controlar la visibilidad de la contraseña
+    const [showPassword, setShowPassword] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -37,6 +36,9 @@ export const Register = () => {
         }
         if (!values.lastname.trim()) {
             errors.lastname = 'Debes escribir tu apellido';
+        }
+        if (!values.username.trim()) {
+            errors.username = 'Debes escribir un nombre de usuario';
         }
         if (!values.email.trim()) {
             errors.email = 'Debes escribir un correo electrónico';
@@ -84,10 +86,15 @@ export const Register = () => {
                         </div>
                         <p className="error-message">{formErrors.name}</p>
                         <div className="input__box">
-                            <div className="input__title">Apellidos:</div> 
+                            <div className="input__title">Apellido:</div> 
                             <input type="text" name="lastname" value={formValues.lastname} onChange={handleChange} />
                         </div>
                         <p className="error-message">{formErrors.lastname}</p>
+                        <div className="input__box">
+                            <div className="input__title">Nombre de Usuario:</div> 
+                            <input type="text" name="username" value={formValues.username} onChange={handleChange} />
+                        </div>
+                        <p className="error-message">{formErrors.username}</p>
                         <div className="input__box">
                             <div className="input__title">Correo electrónico:</div> 
                             <input type="email" name="email" value={formValues.email} onChange={handleChange} />
