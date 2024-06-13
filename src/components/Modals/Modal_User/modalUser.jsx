@@ -16,7 +16,7 @@ const ModalUser = ({ isOpen, onClose }) => {
             <div className="modal-first-content">
                 <ul className="modal-menu">
                     <li className='modal-menu list'><a href="#profile"><i className="icon-profile"></i>Mi perfil</a></li>
-                    <li className='modal-menu list'><a href="#todo"><i className="icon-todo"></i>To do list</a></li>
+                    <li className='modal-menu list'><Link to="/todolist"><i className="icon-todo"></i>To do list</Link></li>
                 </ul>
             </div>
             <div className='modal-second-content'>
