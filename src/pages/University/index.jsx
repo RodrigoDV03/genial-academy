@@ -1,11 +1,17 @@
 import "./styles-unmsm.css"
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import { NavBar } from "../../components/NavBar";
 import { Footer } from "../../components/Footer";
 import ModalExam from "../../components/Modals/Modal_Exam/modalExam";
-export const Unmsm = () => {
+
+export const University = () => {
+
     const [isModalOpen, setModalOpen] = useState(false);
+
+    const params = useParams();
+
+    const {uni_id} = params;
 
     const handleOpenModal = () => {
       setModalOpen(true);
@@ -14,6 +20,76 @@ export const Unmsm = () => {
     const handleCloseModal = () => {
       setModalOpen(false);
     };
+
+    //TODO: conectar a la bd
+    function getAreasById(uni_id) {
+      return [
+        {
+          id: 'areaa',
+          name: 'Área A',
+          desc: 'Ciencias de la Salud',
+          img: 'doctor'
+        },
+        {
+          id: 'areab',
+          name: 'Área B',
+          desc: 'Ciencias Básicas',
+          img: 'calculator'
+        }
+        ,
+        {
+          id: 'areac',
+          name: 'Área C',
+          desc: 'Ingenierías',
+          img: 'technology'
+        }
+        ,
+        {
+          id: 'aread',
+          name: 'Área D',
+          desc: 'Ciencias Económicas y de la Gestión',
+          img: 'economy'
+        }
+        ,
+        {
+          id: 'areae',
+          name: 'Área E',
+          desc: 'Humanidades y Ciencias Jurídicas y Sociales',
+          img: 'law'
+        }
+      ]
+    }
+
+    const AREA =  getAreasById(uni_id);
+
+    function areaCard(area) {
+      return (
+        <div className="areas__button">
+          <Link to={area.id}>
+          <div className="button__image">
+            <img src={`/src/assets/images/${area.img}.png`} alt="" />
+          </div>
+          </Link>
+          <div className="button__text">
+            <h4>{area.name}</h4>
+            <p>{area.desc}</p>
+          </div>
+        </div>
+      )
+      
+    }
+
+    function generateGrid() {
+      const html = [];
+      AREA.forEach(area => {
+        html.push(
+          areaCard(area)
+        );
+      });
+      return html;
+    }
+    
+
     return (
     <div>
       <NavBar></NavBar>
@@ -24,11 +100,11 @@ export const Unmsm = () => {
           </figure>
           <div className="banner__text">
             <div className="text__title">
-              <h1>Bienvenido a UNMSM</h1>
-              <img src="/src/assets/images/unmsm.png" alt="UNMSM" />
+              <h1>Bienvenido a {uni_id}</h1>
+              <img src={`/src/assets/images/${uni_id}.png`} alt="UNMSM" />
             </div>
             <p className="text__paragraph">
-              Descubre tu camino hacia el éxito universitario con ArdillaGenius, tu compañero de estudio personalizado. En esta sección exclusiva, te invitamos a explorar las oportunidades educativas que la UNMSM tiene para ofrecer y toda la información que necesitas saber como preuniversitario.
+              Descubre tu camino hacia el éxito universitario con ArdillaGenius, tu compañero de estudio personalizado. En esta sección exclusiva, te invitamos a explorar las oportunidades educativas que la {uni_id} tiene para ofrecer y toda la información que necesitas saber como preuniversitario.
             </p>
           </div>
         </div>
@@ -85,7 +161,7 @@ export const Unmsm = () => {
             <div className="card__text">
               <p className="card__paragraph">Explora, Sueña, Descubre el área que pertenece tu carrera con un clic</p>
               <button className="card__button">
-                <a href="#">Descubre tu area</a>
+              <Link to = {'area'}> Descubre tu area</Link>
               </button>
             </div>
           </div>
@@ -93,51 +169,7 @@ export const Unmsm = () => {
         <section className="main__areas">
           <h2>Áreas</h2>
           <div className="areas">
-            <div className="areas__button">
-              <div className="button__image">
-                <a href="#"><img src="/src/assets/images/doctor.png" alt="" /></a>
-              </div>
-              <div className="button__text">
-                <h4>Área A</h4>
-                <p>Ciencias de la Salud</p>
-              </div>
-            </div>
-            <div className="areas__button">
-              <div className="button__image">
-                <a href="#"><img src="/src/assets/images/calculator.png" alt="" /></a>
-              </div>
-              <div className="button__text">
-                <h4>Área B</h4>
-                <p>Ciencias Básicas</p>
-              </div>
-            </div>
-            <div className="areas__button">
-              <div className="button__image">
-                <Link to = {'/areac'}><img src="/src/assets/images/technology.png" alt="" /></Link>
-              </div>
-              <div className="button__text">
-                <h4>Área C</h4>
-                <p>Ingeniería</p>
-              </div>
-            </div>
-            <div className="areas__button">
-              <div className="button__image">
-                <a href="#"><img src="/src/assets/images/economy.png" alt="" /></a>
-              </div>
-              <div className="button__text">
-                <h4>Área D</h4>
-                <p>Ciencias Económicas y de la Gestión</p>
-              </div>
-            </div>
-            <div className="areas__button">
-              <div className="button__image">
-                <a href="#"><img src="/src/assets/images/law.png" alt="" /></a>
-              </div>
-              <div className="button__text">
-                <h4>Área E</h4>
-                <p>Humanidades y Ciencias Jurídicas y Sociales</p>
-              </div>
-            </div>
+            {generateGrid()}
           </div>
         </section>
         <section className="main__card">
@@ -149,7 +181,7 @@ export const Unmsm = () => {
               <div className="buttonContainer">
                 <button onClick={handleOpenModal}>Estructura de examen de admisión</button>
               </div>
-              <ModalExam isOpen={isModalOpen} onClose={handleCloseModal} />
+              <ModalExam uniId={uni_id} isOpen={isModalOpen} onClose={handleCloseModal} />
             </div>
           </div>
         </section>
@@ -158,4 +190,4 @@ export const Unmsm = () => {
     </div>
     );
 }
-export default Unmsm;
+export default University;

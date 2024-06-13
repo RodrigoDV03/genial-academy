@@ -26,14 +26,3 @@ export const Home = () => {
         </div>
     )
 };
-
-/*
-
-            
-            
-            <UniversitiesSection></UniversitiesSection>
-            <TutorialSection></TutorialSection>
-            <MemberShipSection></MemberShipSection>
-            <FaqSection></FaqSection>
-            <Footer></Footer>
-*/

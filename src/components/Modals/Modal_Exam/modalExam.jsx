@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './modalExam.css';
 
-const ModalExam = ({ isOpen, onClose }) => {
+const ModalExam = ({ uniId, isOpen, onClose }) => {
     if (!isOpen) return null;
 
     return (
@@ -9,7 +9,7 @@ const ModalExam = ({ isOpen, onClose }) => {
         <div className="modal-container">
             <button className="close-button" onClick={onClose}>X</button>
             <div className="Contenido">
-                <h1>Estructura de examen de admisión por área</h1>
+                <h1>Estructura de examen de admisión por área de {uniId}</h1>
                 <div className="img"></div>
             </div>
         </div>
