@@ -57,7 +57,7 @@ form .input__title{
     border: 1px solid #0009;
     border-radius: 10px;
     font-size: 16px;
-    padding: 20px 30px;
+    padding: 10px 30px;
 }
 
 button.toggle__password{
