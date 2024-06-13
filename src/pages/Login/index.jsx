@@ -9,17 +9,42 @@ export const Login = () => {
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
-
+    const [isModalOpen, setModalOpen] = useState(false);
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const errors = validate(formValues);
-        setFormErrors(errors);
-        setIsSubmit(true);
+        if (Object.keys(errors).length === 0) {
+            try {
+                const response = await fetch("http://localhost:8080/users/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formValues),
+                });
+                if(response.status === 200){
+                    setIsSubmit(true);
+                    setModalOpen(true);
+                }
+                else{
+                    console.log("ERROR");
+                    setFormErrors({ backend: "Usuario o contraseña incorrecto" });
+                }
+
+                
+            } catch (error) {
+                console.log("ERROR");
+                setFormErrors({ backend: "Usuario o contraseña incorrecto" });
+            }
+        } else {
+            setFormErrors(errors);
+        }
     };
 
     useEffect(() => {
@@ -42,7 +67,6 @@ export const Login = () => {
         return errors;
     };
 
-    const [isModalOpen, setModalOpen] = useState(false);
 
     const handleOpenModal = () => {
         setModalOpen(true);
@@ -61,14 +85,14 @@ export const Login = () => {
             <div className="login__image"></div>
             <div className="wrapper">
                 <div className="form__box">
-                    {Object.keys(formErrors).length === 0 && isSubmit && (
+                    {isSubmit && (
                         <ModalLogin isOpen={isModalOpen} onClose={handleCloseModal} />
                     )}
                     <form onSubmit={handleSubmit}>
                         <h1>HOLA! GENIALACADEMY</h1>
                         <h2>Iniciar Sesión</h2>
                         <div className="input__box">
-                            <div className="input__title">Nombre de usuario:</div>
+                            <div className="input__title">Nombre de Usuario:</div>
                             <input type="text" name="username" value={formValues.username} onChange={handleChange} />
                         </div>
                         <p className="error-message">{formErrors.username}</p>
@@ -87,6 +111,8 @@ export const Login = () => {
                             </div>
                         </div>
                         <p className="error-message">{formErrors.password}</p>
+
+                        {formErrors.backend && !isSubmit && <p className="error-message">{formErrors.backend}</p>}
 
                         <button className="login__Button" onClick={handleOpenModal}>
                             Ingresar

@@ -15,12 +15,25 @@ export const Register = () => {
         setFormValues({ ...formValues, [name]: value });
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const errors = validate(formValues);
-        setFormErrors(errors);
-        setIsSubmit(true);
-        console.log(formValues);
+        if (Object.keys(errors).length === 0) {
+            try {
+                const response = await fetch("http://localhost:8080/users/create", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(formValues),
+                });
+                setIsSubmit(true);
+            } catch (error) {
+                console.log("Error");
+            }
+        } else {
+            setFormErrors(errors);
+        }
     }
 
     useEffect(() => {
