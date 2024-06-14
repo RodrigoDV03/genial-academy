@@ -28,13 +28,13 @@
     padding: 0.8rem;
     border-radius: 1rem;
     margin: 2rem;
-}
-
-.faq_tile:hover {
-    cursor: pointer;
+    transition: all 1s ease;
 }
 
 .faq_tile_collapse {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin: 1rem;
 }
 
@@ -42,7 +42,6 @@
     margin: 1rem;
 }
 
-.hidden {
-    display: none;
+.faq_tile_trail {
+    cursor: pointer;
 }
-
