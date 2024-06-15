@@ -83,10 +83,10 @@ export const Register = () => {
     };
 
     return (
-        <div className="container">
+        <div className="register__container">
             <div className="register__image"></div>
-            <div className="wrapper">
-                <div className="form__box">
+            <div className="register__wrapper">
+                <div className="register__form__box">
                     {Object.keys(formErrors).length === 0 && isSubmit && 
                     (
                         <ModalRegister isOpen={isModalOpen} onClose={handleCloseModal} />
@@ -94,41 +94,41 @@ export const Register = () => {
                     <form onSubmit={handleSubmit}>
                         <h1>HOLA! GENIALACADEMY</h1>
                         <h2>Regístrate</h2>
-                        <div className="input__box">
-                            <div className="input__title">Nombre:</div> 
+                        <div className="register__input__box">
+                            <div className="register__input__title">Nombre:</div> 
                             <input type="text" name="name" value={formValues.name} onChange={handleChange} />
                         </div>
-                        <p className="error-message">{formErrors.name}</p>
-                        <div className="input__box">
-                            <div className="input__title">Apellido:</div> 
+                        <p className="register__error-message">{formErrors.name}</p>
+                        <div className="register__input__box">
+                            <div className="register__input__title">Apellido:</div> 
                             <input type="text" name="lastname" value={formValues.lastname} onChange={handleChange} />
                         </div>
-                        <p className="error-message">{formErrors.lastname}</p>
-                        <div className="input__box">
+                        <p className="register__error-message">{formErrors.lastname}</p>
+                        <div className="register__input__box">
                             <div className="input__title">Nombre de Usuario:</div> 
                             <input type="text" name="username" value={formValues.username} onChange={handleChange} />
                         </div>
-                        <p className="error-message">{formErrors.username}</p>
-                        <div className="input__box">
-                            <div className="input__title">Correo electrónico:</div> 
+                        <p className="register__error-message">{formErrors.username}</p>
+                        <div className="register__input__box">
+                            <div className="register__input__title">Correo electrónico:</div> 
                             <input type="email" name="email" value={formValues.email} onChange={handleChange} />
                         </div>
-                        <p className="error-message">{formErrors.email}</p>
-                        <div className="input__box">
-                            <div className="input__title">Contraseña:</div> 
-                            <div className="password__input__container">
+                        <p className="register__error-message">{formErrors.email}</p>
+                        <div className="register__input__box">
+                            <div className="register__input__title">Contraseña:</div> 
+                            <div className="register__password__input__container">
                                 <input 
                                     type={showPassword ? "text" : "password"} 
                                     name="password" 
                                     value={formValues.password} 
                                     onChange={handleChange} 
                                 />
-                                <button type="button" className="toggle__password" onClick={toggleShowPassword}>
+                                <button type="button" className="register__toggle__password" onClick={toggleShowPassword}>
                                     {showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
                                 </button>
                             </div>
                         </div>
-                        <p className="error-message">{formErrors.password}</p>
+                        <p className="register__error-message">{formErrors.password}</p>
 
                         <button className="register__Button" onClick={handleOpenModal}>
                             Regístrate

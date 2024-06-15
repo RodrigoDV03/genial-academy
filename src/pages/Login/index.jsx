@@ -82,23 +82,23 @@ export const Login = () => {
     };
 
     return (
-        <div className="container">
+        <div className="login__container">
             <div className="login__image"></div>
-            <div className="wrapper">
-                <div className="form__box">
+            <div className="login__wrapper">
+                <div className="login__form__box">
                     {isSubmit && (
                         <ModalLogin isOpen={isModalOpen} onClose={handleCloseModal} />
                     )}
                     <form onSubmit={handleSubmit}>
                         <h1>HOLA! GENIALACADEMY</h1>
                         <h2>Iniciar Sesión</h2>
-                        <div className="input__box">
-                            <div className="input__title">Nombre de Usuario:</div>
+                        <div className="login__input__box">
+                            <div className="login__input__title">Nombre de Usuario:</div>
                             <input type="text" name="username" value={formValues.username} onChange={handleChange} />
                         </div>
-                        <p className="error-message">{formErrors.username}</p>
-                        <div className="input__box">
-                            <div className="input__title">Contraseña:</div>
+                        <p className="login__error-message">{formErrors.username}</p>
+                        <div className="login__input__box">
+                            <div className="login__input__title">Contraseña:</div>
                             <div className="password__input__container">
                                 <input 
                                     type={showPassword ? "text" : "password"} 
@@ -106,14 +106,14 @@ export const Login = () => {
                                     value={formValues.password} 
                                     onChange={handleChange} 
                                 />
-                                <button type="button" className="toggle__password" onClick={toggleShowPassword}>
+                                <button type="button" className="login__toggle__password" onClick={toggleShowPassword}>
                                     {showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
                                 </button>
                             </div>
                         </div>
-                        <p className="error-message">{formErrors.password}</p>
+                        <p className="login__error-message">{formErrors.password}</p>
 
-                        {formErrors.backend && !isSubmit && <p className="error-message">{formErrors.backend}</p>}
+                        {formErrors.backend && !isSubmit && <p className="login__error-message">{formErrors.backend}</p>}
 
                         <button className="login__Button" onClick={handleOpenModal}>
                             Ingresar

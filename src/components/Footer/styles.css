@@ -1,11 +1,12 @@
 footer {
     background-color: #4CAD95;
     width: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 40px 0;
 }
 
 .row_1 {
@@ -32,16 +33,14 @@ footer {
     display: flex;
     flex: auto;
     flex-wrap: wrap;
-    max-width: 50rem;
+    margin: 0 200px;
     justify-content: center;
 }
 
-.nav_item {
-    margin-right: 4rem;
-    margin-left: 4rem;
-    margin-bottom: 1rem;
+.footer__nav__item {
     color: #fff;
     text-decoration: none;
+    margin: 20px;
 }
 
 .social_container {

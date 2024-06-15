@@ -32,10 +32,18 @@
 
 .faq_tile:hover {
     cursor: pointer;
+    background-color: #6FAFA6;
 }
 
 .faq_tile_collapse {
     margin: 1rem;
+}
+
+.faq_tile_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .faq_tile_expanded {
@@ -46,3 +54,16 @@
     display: none;
 }
 
+.arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.arrow.right {
+    transform: rotate(0deg);
+}
+
+.arrow.down {
+    transform: rotate(90deg);
+}

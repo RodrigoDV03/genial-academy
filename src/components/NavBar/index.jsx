@@ -23,15 +23,17 @@ export const NavBar = () => {
         </div>
         <nav className="nav_container">
             <ul className="nav">
-              <li className="nav_item">
+              <li className="header__nav__item">
                 <Link to='/home' className="nav_link">
                   Inicio
                 </Link>
               </li>
-              <li className="nav_item">
-                Universidades
+              <li className="header__nav__item">
+                <Link to='/home/:uni_id' className="nav_link">
+                  Universidades
+                </Link>
               </li>
-              <li className="nav_item">
+              <li className="header__nav__item">
                 <Link to='/library' className="nav_link">
                   Biblioteca Virtual
                 </Link>
