@@ -6,77 +6,6 @@ body{
 p{
     color: #000;
 }
-/* HEADER */
-
-header{
-    background-color: #4CAD95;
-    height: 100px;
-    display: flex;
-}
-
-.header{
-    margin: auto;
-    display: flex;
-}
-
-.nav{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 6px 20px;
-    position: sticky;
-    top: 0;
-    margin-bottom: 10px;
-}
-
-.nav__ul{
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
-}
-
-.nav__item{
-    list-style: none;
-    margin: 0 60px;
-}
-
-.nav__ul-container{
-    flex-grow: 4;
-}
-
-.nav__logo-container, .nav__ul-container{
-    flex-grow: 1;
-    text-align: center;
-}
-
-.nav__link{
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 10px;
-    border-radius: 0;
-    transition: background-color 0.3s, border-radius 0.24s;
-    margin: 2px;
-}
-
-.nav__link:hover{
-    background-color: #4C8C95;
-    border-radius: 20px;
-    outline-offset: -7px;
-}
-
-.nav__logo{
-    margin-top: 20px;
-    margin-left: -450px;
-}
-
-.nav__logo:hover{
-    cursor: pointer;
-}
-
-/* MAIN */
 
 main{
     padding: 0 200px;
@@ -85,14 +14,12 @@ main{
 .Content{
     justify-content: center;
     display: flex;
-    padding: 40px;
+    padding: 100px;
 }
 
 .Content__Text{
-    margin: 0px;
+    margin: auto 150px;
     width: 400px;
-    padding-top: 80px;
-    padding-right: 70px;
     text-align: justify;
 }
 
@@ -104,7 +31,6 @@ main{
 }
 
 .Content__Text p{
-    margin-top: 50px;
     font-size: 16px;
 }
 
@@ -152,60 +78,4 @@ main{
 .Area__Careers ul li{
     margin: 10px 0px;
     font-size: 16px;
-}
-
-/* FOOTER */
-
-footer{
-    height: 400px;
-    background-color: #4CAD95;
-}
-.footer__container{
-    display: flex;
-    justify-content: center;
-}
-
-.footer__logo{
-    margin-top: 70px;
-}
-
-.footer__list{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0px 380px;
-    padding: 50px 0;
-}
-
-.footer__list ul li{
-    list-style: none;
-    margin: 10px;
-    color: #fff;
-}
-
-.footer__list ul li:hover{
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.social__media-container{
-    /* justify-content: end; */
-    display: flex;
-    padding: 60px 50px;
-}
-
-.social__media-icon{
-    margin: 20px;
-    height: 60px;
-    width: 60px;
-    background-color: #21433B;
-    border-radius: 100%;
-}
-
-.social__media-icon:hover{
-    background-color: #296F5D;
-    cursor: pointer;
-}
-
-.social__media-image{
-    padding: 17px;
 }

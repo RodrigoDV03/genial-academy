@@ -1,7 +1,7 @@
 .f_screen {
     background-color: #fff;
     width: 100%;
-    height: 40rem;
+    height: 30rem;
     display: flex;
     flex-direction: column;
 }
@@ -45,7 +45,6 @@
     color: black;
     font-weight: bold;
     flex: 1;
-    padding: 5rem;
 }
 
 .f_card {
