@@ -51,7 +51,6 @@ header{
 .nav_link:hover{
     color: #21433B;
     font-weight: 600;
-    border-bottom: 1px solid #21433B;
 }
 
 .action_button {

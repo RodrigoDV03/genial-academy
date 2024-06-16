@@ -38,7 +38,7 @@ main{
 .text__paragraph{
     color: white;
     margin-top: 1.25rem;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 2.5rem;
 }
 
@@ -95,16 +95,15 @@ main{
 .main__card{
     width: 70%;
     margin: 0 auto;
-    margin-top: 150px;
 }
 
 .card{
-    background-color: #A6D6CA;
+    background-color: #95C5B9;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: .9375rem;
-    padding: 0 6.25rem;
+    padding: 2rem 6.25rem;
     box-shadow: 0px 20px 100px #C3E3DB;
 }
 

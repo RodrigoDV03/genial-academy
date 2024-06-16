@@ -11,11 +11,11 @@
     flex: 4;
     display: flex;
     justify-content: center; /* Centra horizontalmente */
-    align-items: center; 
+    align-items: center;
+    margin-left: 200px;
 }
 
 .p_box {
-    width: 25rem;
     text-align: left;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .p_welcome {
-    font-size: 42px;
+    font-size: 36px;
     font-weight: bold;
     letter-spacing: 2px;
 }
