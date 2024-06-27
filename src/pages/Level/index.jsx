@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import { NavBar } from "../../components/NavBar";
 import { Footer } from "../../components/Footer";
 import { useNavigate, useParams } from "react-router-dom";
+import ModalLevel from "../../components/Modals/Modal_Level/modalLevel";
 
 export const Level = () => {
     const params = useParams();
     const navigate = useNavigate();
     const {uni_id, area_id, course_id, theme_id, level_id} = params;
 
+    //redireccion
     useEffect(() => {
         if (!["advanced", "medium", "basic"].includes(level_id)) {
             navigate('/home');
@@ -16,10 +18,9 @@ export const Level = () => {
     }, [level_id, navigate]);
 
     const options = [
-        "a","b", "c", "d", "e"
+        "a","b", "c", "d", "e", "f"
     ]
 
-    
     function getQuestionsById(uni_id, area_id, course_id, theme_id, level_id) {
         return [
             {
@@ -174,12 +175,60 @@ export const Level = () => {
 
     const QUESTIONS = getQuestionsById(uni_id, area_id, course_id, theme_id, level_id);
 
-    function generateAnswers(answers) {
+    let s = []
+    for (let index = 0; index < QUESTIONS.length; index++) {
+        s[index] = -1
+    }
+
+    const [selection, setSelection] = useState(s);
+    const [openClose, setOpenClose] = useState(false);
+    const [result, setResult] = useState({ coins: 0, correct: 0, incorrect: 0});
+
+    function calculateResult() {
+        const coin = 3;
+        const penaltyCoin = 1;
+        const newResult = {coins: 0, correct: 0, incorrect: 0}
+        QUESTIONS.forEach((question, number_q)=> {
+            question.answers.forEach((answer, number_a) => {
+                if(number_a == selection[number_q]) {
+                    if(answer.correct){
+                        newResult.correct++
+                    }
+                    else {
+                        newResult.incorrect++
+                    }
+                }
+            });
+        }); 
+        newResult.coins = newResult.correct*coin - newResult.incorrect*penaltyCoin;
+        if(newResult.coins < 0) {
+            newResult.coins = 0;
+        }
+        setResult(newResult);
+        return true;
+    }
+
+    function handelSelection(number_q, select) {
+        const newSelection = [...selection];
+        if(newSelection[number_q] == select) {
+            newSelection[number_q] = -1;
+        }
+        else {
+            newSelection[number_q] = select;
+        }
+        setSelection(newSelection);
+    }
+
+    function generateAnswers(answers, number_q) {
         const html = [];
         answers.forEach((answer, i) => {
             html.push(
                 <div className="question">
-                    <button className="question_selector">{options[i]}</button>
+                    <div className={`question_selector ${selection[number_q] == i? "question_selector_selected" : ""}`}
+                        onClick={()=>handelSelection(number_q, i)}
+                    >
+                        {options[i]}
+                    </div>
                     <p>{answer.desc}</p>
                 </div>
             );
@@ -187,15 +236,15 @@ export const Level = () => {
         return html;
     }
 
-    function questionSection(question, index) {
+    function questionSection(question, number_q) {
         return (
             <div className="question__container">
-                <h4>Pregunta {index+1}:</h4>
+                <h4>Pregunta {number_q+1}:</h4>
                 <br/>
                 <p>{question.desc}</p>
                 <br/>
                 <div className="question__answer">
-                    {generateAnswers(question.answers)}
+                    {generateAnswers(question.answers, number_q)}
                 </div>
             </div>
         );
@@ -220,7 +269,11 @@ export const Level = () => {
                     {generateFlex()}
                 </div>
                 <div className="submit__button__container">
-                    <button className="submit__button">
+                    <button className="submit__button"
+                        onClick={()=>{
+                            calculateResult();
+                            setOpenClose(true)
+                        }}>
                         Terminar
                     </button>
                 </div>
@@ -229,6 +282,12 @@ export const Level = () => {
                 </button>
             </main>
             <Footer></Footer>
+            <ModalLevel 
+                isOpen={openClose} 
+                onClose={()=>setOpenClose(false)}
+                result={result} 
+                linkTo={'/home'}
+            />
         </div>
     );
 }

@@ -28,14 +28,13 @@
     padding: 0.8rem;
     border-radius: 1rem;
     margin: 2rem;
-}
-
-.faq_tile:hover {
-    cursor: pointer;
-    background-color: #6FAFA6;
+    transition: all 1s ease;
 }
 
 .faq_tile_collapse {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin: 1rem;
 }
 
@@ -50,20 +49,6 @@
     margin: 1rem;
 }
 
-.hidden {
-    display: none;
-}
-
-.arrow {
-    font-size: 18px;
-    transition: transform 0.3s ease;
-    margin-left: 10px;
-}
-
-.arrow.right {
-    transform: rotate(0deg);
-}
-
-.arrow.down {
-    transform: rotate(90deg);
+.faq_tile_trail {
+    cursor: pointer;
 }
