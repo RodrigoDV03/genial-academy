@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './modalUser.css';
 
 const ModalUser = ({ isOpen, onClose }) => {
+    const username = localStorage.getItem("username");
     if (!isOpen) return null;
 
     return (
@@ -11,7 +12,7 @@ const ModalUser = ({ isOpen, onClose }) => {
             <button className="close-button" onClick={onClose}>X</button>
             <div className="modal-header">
                 <img src='./src/assets/images/ardilla.png' alt="User Avatar" className="avatar" />
-                <h2>Usuario</h2>
+                <h2>{username}</h2>
             </div>
             <div className="modal-first-content">
                 <ul className="modal-menu">
