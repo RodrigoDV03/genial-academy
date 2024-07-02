@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
 import { Link } from "react-router-dom";
 import "./stylesRegister.css";
 import ModalRegister from "../../components/Modals/Modal_Register/modalRegister";
@@ -18,23 +19,28 @@ export const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const errors = validate(formValues);
+        setFormErrors(errors); // Actualiza los errores
         if (Object.keys(errors).length === 0) {
             try {
-                const response = await fetch("http://localhost:8080/users/create", {
-                    method: "POST",
+                const response = await axios.post('https://genial-academy-backend.onrender.com/auth/register', formValues,{
                     headers: {
                         "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(formValues),
+                    }
                 });
+
+                console.log(response.data);
+                localStorage.setItem('token', response.data.token);
+                localStorage.setItem('username', formValues.username);
                 setIsSubmit(true);
             } catch (error) {
-                console.log("Error");
+                if (error.response && error.response.status === 409) {
+                    setFormErrors({ ...formErrors, general: 'El correo electrónico o nombre de usuario ya está en uso.' });
+                } else {
+                    console.error('Error al registrar:', error);
+                }
             }
-        } else {
-            setFormErrors(errors);
         }
-    }
+    };
 
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
@@ -68,16 +74,6 @@ export const Register = () => {
         return errors;
     }
 
-    const [isModalOpen, setModalOpen] = useState(false);
-
-    const handleOpenModal = () => {
-        setModalOpen(true);
-    };
-
-    const handleCloseModal = () => {
-        setModalOpen(false);
-    };
-
     const toggleShowPassword = () => {
         setShowPassword(!showPassword);
     };
@@ -89,7 +85,7 @@ export const Register = () => {
                 <div className="register__form__box">
                     {Object.keys(formErrors).length === 0 && isSubmit && 
                     (
-                        <ModalRegister isOpen={isModalOpen} onClose={handleCloseModal} />
+                        <ModalRegister isOpen={isSubmit} onClose={() => setIsSubmit(false)} />
                     )}
                     <form onSubmit={handleSubmit}>
                         <h1>HOLA! GENIALACADEMY</h1>
@@ -105,7 +101,7 @@ export const Register = () => {
                         </div>
                         <p className="register__error-message">{formErrors.lastname}</p>
                         <div className="register__input__box">
-                            <div className="input__title">Nombre de Usuario:</div> 
+                            <div className="register__input__title">Nombre de Usuario:</div> 
                             <input type="text" name="username" value={formValues.username} onChange={handleChange} />
                         </div>
                         <p className="register__error-message">{formErrors.username}</p>
@@ -122,7 +118,7 @@ export const Register = () => {
                                     name="password" 
                                     value={formValues.password} 
                                     onChange={handleChange} 
-                                />
+                                />                 
                                 <button type="button" className="register__toggle__password" onClick={toggleShowPassword}>
                                     {showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
                                 </button>
@@ -130,7 +126,7 @@ export const Register = () => {
                         </div>
                         <p className="register__error-message">{formErrors.password}</p>
 
-                        <button className="register__Button" onClick={handleOpenModal}>
+                        <button className="register__Button">
                             Regístrate
                         </button>        
 

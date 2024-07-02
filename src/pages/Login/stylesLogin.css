@@ -8,10 +8,10 @@
 .login__image{
     height: 800px;
     width: 800px;
-    background-image: url(/src/assets/images/Login_image.png);
+    background-image: url(/src/assets/images/login_image.png);
     background-size: cover;
     margin-left: 200px;
-    margin-bottom: 110px;
+    margin-bottom: 500px;
 }
 
 .login__wrapper{
@@ -21,7 +21,6 @@
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
-
 
 .login__wrapper .login__form__box{
     padding: 40px;
@@ -88,6 +87,8 @@ p.login__error-message{
     color: red;
     font-size: 12px;
     font-weight: bold;
+    min-height: 16px; /* Reservar espacio para el mensaje de error */
+    margin: 5px 0;    /* Añadir margen para separar el error del input */
 }
 
 form .register__link{

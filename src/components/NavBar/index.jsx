@@ -41,8 +41,8 @@ export const NavBar = () => {
             </ul>
         </nav>
         <div className="actions_container">
-            <button onClick={handleOpenModal} className="open-modal-button">
-            </button>
+            <img src='./src/assets/images/userMenu.png' onClick={handleOpenModal} className="open-modal-button">
+            </img>
             <span>Bienvenido, {username}</span>
         </div>
         <ModalUser isOpen={isModalOpen} onClose={handleCloseModal} />

@@ -24,7 +24,7 @@
 
 .u_card_title {
     color: #fff;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 400;
 }
 
@@ -33,15 +33,19 @@
     background-color: #83B4A8;
     height: 16rem;
     width: 14rem;
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
-    margin-top: 2.5rem;
-    margin-bottom: 2.5rem;
+    padding: 2rem;
+    margin: 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 0;
+}
+
+.u_card_img img{
+    width: 10rem;
+    height: 10rem;
+    padding: 1rem;
 }
 
 .u_card:hover {
