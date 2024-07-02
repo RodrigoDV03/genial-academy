@@ -51,7 +51,7 @@ export const ToDoList = () => {
 
   return (
     <div className="App">
-      <main>
+      <main className='main'>
         <div className="container--todolist">
           <div className="container__list">
             <div className="list__texts">
