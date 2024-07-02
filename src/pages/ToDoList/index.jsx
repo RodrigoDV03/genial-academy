@@ -56,7 +56,7 @@ export const ToDoList = () => {
           <div className="container__list">
             <div className="list__texts">
               <div className="list__text">
-                <h1>To Do List</h1>
+                <h1 className='list__text-'>To Do List</h1>
                 <div className="list__add">
                   <input
                     type="text"
@@ -89,19 +89,6 @@ export const ToDoList = () => {
                   <i className="bi bi-x" onClick={() => eliminarTarea(task.id)}></i>
                 </div>
               ))}
-            </div>
-          </div>
-          <div className="container__pomodoro">
-            <div className="pomodoro__circle">
-              <img src='/src/assets/images/pomodoro.png' alt="Pomodoro" />
-            </div>
-            <div className="pomodoro__buttons">
-              <button id="comenzar" type="button">
-                Comenzar
-              </button>
-              <button id="asignar" type="button">
-                Asignar tiempo
-              </button>
             </div>
           </div>
         </div>

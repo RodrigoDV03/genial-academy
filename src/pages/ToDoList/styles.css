@@ -1,13 +1,15 @@
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
-main{
+body{
+    height: 100vh;
     display: grid;
-    padding: 0;
+    place-content: center;
+    background-color: #72b3a4;
+    color: white;
 }
 
 .container--todolist{
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,25 +17,23 @@ main{
 }
 
 .container__list{
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.list__texts h1{
-    font-size: 30px;
+.list__text h1{
+    color: white;
+    font-size: 40px;
     font-weight: 700;
-    color: black;
     text-align: left;
 }
 
 .list__texts h2{
     font-size: 20px;
-    font-weight: 500;
-    color: #509887;
+    font-weight: 600;
+    color: #24413a;
 }
 
 .list__add{
@@ -46,14 +46,15 @@ main{
 
 .list__add input{
     width: 31.25rem;
-    height: 2.8125rem;
+    height: 4rem;
     padding-left: 1.25rem;
     border: 1.5px solid #AAAAAA;
+    font-size: 20px;
     border-radius: 10px;
 }
 
 #button__add{
-    background-color: #509887;
+    background-color: #33534c;
     width: 3rem;
     height: 3rem;
     border: none;
@@ -83,11 +84,13 @@ main{
 
 .list__task i{
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .list__task .task__check{
     cursor: pointer;
+    width: 25px;
+    border: none;
 }
 
 .checked{
@@ -106,36 +109,7 @@ main{
     gap: .625rem;
 }
 
-.container__pomodoro{
-    height: 100%;
-    width: 100%;
-    background-color: #90CDBE;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.pomodoro__circle{
-    margin: 120px auto;
-    text-align: center;
-}
-
-.pomodoro__circle img{
-    margin-top: 2.5rem;
-    width: 80%;
-}
-
-.pomodoro__buttons{
-    display: flex;
-    gap: 50px;
-}
-
-.pomodoro__buttons button{
-    padding: 1.25rem 2.5rem;
-    border: none;
-    border-radius: 20px;
-    background-color: #2F8B7A;
+.task__add{
     color: white;
     font-size: 20px;
-    font-weight: 600;
 }
