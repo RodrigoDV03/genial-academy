@@ -1,6 +1,11 @@
+.libraryMain{
+    margin: 0;
+    padding: 0;
+}
+
 #banner {
     background-color: #4CAD95;
-    margin: 0 auto;
+    margin: 100px auto;
 }
 
 .banner{

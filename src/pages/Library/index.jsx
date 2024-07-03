@@ -7,7 +7,7 @@ export const Library = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <main>
+            <main className="libraryMain">
                 <section id="banner">
                     <div className="banner">
                         <div className="banner__texts">

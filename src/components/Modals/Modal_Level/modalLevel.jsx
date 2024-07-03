@@ -36,9 +36,9 @@ const ModalLevel = ({ isOpen, onClose, result, linkTo }) => {
                 </div>
                 
             </div>
-            <Link to={linkTo} className='solution_level_button'>
+            <a href={linkTo} className='solution_level_button' target="_blank">
                 Ver Solucionario
-            </Link>
+            </a>
         </div>
     </div>
     )

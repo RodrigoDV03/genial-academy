@@ -11,7 +11,7 @@ const ModalUser = ({ isOpen, onClose }) => {
         <div className="usermodal-container">
             <button className="close-button" onClick={onClose}>X</button>
             <div className="modal-header">
-                <img src='./src/assets/images/userMenu.png' alt="User Avatar" className="avatar" />
+                <img src='/src/assets/images/userMenu.png' alt="User Avatar" className="avatar" />
                 <h2>{username}</h2>
             </div>
             <div className="modal-first-content">

@@ -284,9 +284,9 @@ export const Level = () => {
             <Footer></Footer>
             <ModalLevel 
                 isOpen={openClose} 
-                onClose={()=>setOpenClose(false)}
+                onClose={()=>[setOpenClose(false), navigate(-1)]}
                 result={result} 
-                linkTo={'/home'}
+                linkTo={'https://drive.google.com/file/d/1DsaTGDzTfrhj9vJ4ZbFJp8oFEtOKrIMH/view'}
             />
         </div>
     );

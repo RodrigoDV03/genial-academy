@@ -24,16 +24,15 @@
 
 .u_card_title {
     color: #fff;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
 }
 
 .u_card {
     border-radius: 1rem;
     background-color: #83B4A8;
-    height: 16rem;
-    width: 14rem;
-    padding: 2rem;
+    height: 17rem;
+    width: 15rem;
     margin: 2.5rem;
     display: flex;
     flex-direction: column;
@@ -43,8 +42,8 @@
 }
 
 .u_card_img img{
-    width: 10rem;
-    height: 10rem;
+    width: 12rem;
+    height: 12rem;
     padding: 1rem;
 }
 

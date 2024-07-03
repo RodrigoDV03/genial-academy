@@ -16,9 +16,15 @@ export const Footer = () => {
                     <a className="footer__nav__item" href="#">Dispositivos compatibles</a>
                 </div>
                 <div className="social_container">
-                    <button className="social_item"></button>
-                    <button className="social_item"></button>
-                    <button className="social_item"></button>
+                    <button className="social_item">
+                        <img src="/src/assets/images/facebook.png" />
+                    </button>
+                    <button className="social_item">
+                        <img src="/src/assets/images/instagram.png" />
+                    </button>
+                    <button className="social_item">
+                        <img src="/src/assets/images/twitter.png" />
+                    </button>
                 </div>
             </div>
             <div className="row_2">

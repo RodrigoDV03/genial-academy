@@ -54,8 +54,20 @@ footer {
     border-radius: 50%;
     margin: 0.8rem;
     border: none;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.8rem;
+    height: 2.8rem;
 }
 
+.social_item:hover{
+    cursor: pointer;
+    background-color: #197961;
+    transition: 0.5s;
+}
+
+.social_item img {
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: 0.5rem;
+    padding: 0.3rem;
+}
 

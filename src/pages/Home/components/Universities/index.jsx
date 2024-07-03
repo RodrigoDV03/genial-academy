@@ -38,7 +38,7 @@ export const UniversitiesSection = () => {
                 <div className="u_card_img">
                     <img src={university.imgUrl} alt={university.name} />
                 </div>
-                <div className="u_card_title">{university.name}</div>
+                <div className="u_card_title">{university.acronym}</div>
             </Link>
         </button>
         );
