@@ -17,10 +17,10 @@ export const UniversitiesSection = () => {
     
         try {
             const response = await axios.get("https://genial-academy-backend.onrender.com/universities/findAll", {
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}`
-            }
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`
+                }
         });
         setUniversities(response.data);
         } catch (error) {

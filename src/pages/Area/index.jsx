@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './styles.css';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { NavBar } from '../../components/NavBar';
 import { Footer } from '../../components/Footer';
 
 export const Area = () => {
-
+    // const [areaCodArea, setAreaCodArea] = useState('');
+    // const [areaName, setAreaName] = useState('');
     const navigate = useNavigate();
     const params = useParams();
-    const {uni_id, area_id} = params;
+    const { uni_id, area_id } = params;
+
+    useEffect(() => {
+        // Función para obtener las áreas desde la API
+        const fetchAreas = async () => {
+            try {
+                const token = localStorage.getItem('token'); // Obtén el token del localStorage
+                const response = await axios.get('https://genial-academy-backend.onrender.com/areas/findAll', {
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
+                const area = response.data.find(a => a.id.toString() === area_id);
+                // if (area) {
+                //     setAreaCodArea(area.codArea);
+                //     setAreaName(area.name);
+                // }
+            } catch (error) {
+                console.error('Error al obtener las áreas', error);
+            }
+        };
+        fetchAreas();
+    }, [area_id]);
 
     function getCoursesById(uni_id, area_id) {
         return [
@@ -83,8 +107,8 @@ export const Area = () => {
 
     function courseCard(course) {
         return <Link to={course.id} className='link'>
-            <div class="circle-button">
-                <img src={`/src/assets/images/${course.id}.png`} alt={course.name}/>
+            <div className="circle-button">
+                <img src={`/src/assets/images/${course.id}.png`} alt={course.name} />
                 <span>{course.name}</span>
             </div>
         </Link>
@@ -133,25 +157,25 @@ export const Area = () => {
                         <span>2020-I</span>
                     </div>
                     <div className="exam-button">
-                        <img src='/src/assets/images/lista.png'  alt="2020-II" />
+                        <img src='/src/assets/images/lista.png' alt="2020-II" />
                         <span>2020-II</span>
                     </div>
                     <div className="exam-button">
-                        <img src='/src/assets/images/lista.png'  alt="2021-I" />
+                        <img src='/src/assets/images/lista.png' alt="2021-I" />
                         <span>2021-I</span>
                     </div>
                 </div>
-                <div class="exam-container" id="exam-container2">
-                    <div class="exam-button">
-                        <img src='/src/assets/images/lista.png' alt="2021-II"/>
+                <div className="exam-container" id="exam-container2">
+                    <div className="exam-button">
+                        <img src='/src/assets/images/lista.png' alt="2021-II" />
                         <span>2021-II</span>
                     </div>
-                    <div class="exam-button">
-                        <img src='/src/assets/images/lista.png' alt="2022-I"/>
+                    <div className="exam-button">
+                        <img src='/src/assets/images/lista.png' alt="2022-I" />
                         <span>2022-I</span>
                     </div>
-                    <div class="exam-button">
-                        <img src='/src/assets/images/lista.png' alt="2022-II"/>
+                    <div className="exam-button">
+                        <img src='/src/assets/images/lista.png' alt="2022-II" />
                         <span>2022-II</span>
                     </div>
                 </div>
@@ -160,5 +184,3 @@ export const Area = () => {
         </div>
     );
 }
-
-

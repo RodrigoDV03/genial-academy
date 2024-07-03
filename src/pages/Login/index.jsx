@@ -18,20 +18,17 @@ export const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const errors = validate(formValues);
-        setFormErrors(errors); // Actualiza los errores
+        setFormErrors(errors);
         if (Object.keys(errors).length === 0) {
             try {
-                const token = `eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJQZWRybzEyMyIsImlhdCI6MTcxOTk1MDQ4MSwiZXhwIjoxNzIwMDM2ODgxfQ.1HanEFQHYQXY5ZdHyVtb6FrTaLfnJHM3dnMhvLbEl9Il3oX8JPvWS_n7Gw_35Y3b`;
-                const response = await axios.post('https://genial-academy-backend.onrender.com/auth/login', formValues,{
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Authorization": `Bearer ${token}`
-                    }
-                });
-
+                console.log(formValues);
+                
+                const response = await axios.post('https://genial-academy-backend.onrender.com/auth/login', formValues);
+                console.log("hello world");
                 console.log(response.data);
                 localStorage.setItem('token', response.data.token);
                 localStorage.setItem('username', formValues.username);
+                console.log("hello world");
                 setIsSubmit(true);
 
             } catch (error) {

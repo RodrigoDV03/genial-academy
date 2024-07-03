@@ -5,7 +5,7 @@ import "./stylesRegister.css";
 import ModalRegister from "../../components/Modals/Modal_Register/modalRegister";
 
 export const Register = () => {
-    const initialRegisterValues = { name: "", lastname: "", username: "", email: "", password: "" };
+    const initialRegisterValues = { name: "", lastname: "", username: "", email: "", password: "", role: "USER" };
     const [formValues, setFormValues] = useState(initialRegisterValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
@@ -28,8 +28,9 @@ export const Register = () => {
                     }
                 });
 
-                console.log(response.data);
-                localStorage.setItem('token', response.data.token);
+                console.log(response.data.token);
+                localStorage.setItem('token', JSON.stringify(response.data.token));
+                console.log(response.data.token);
                 localStorage.setItem('username', formValues.username);
                 setIsSubmit(true);
             } catch (error) {
