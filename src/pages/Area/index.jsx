@@ -6,33 +6,60 @@ import { NavBar } from '../../components/NavBar';
 import { Footer } from '../../components/Footer';
 
 export const Area = () => {
-    // const [areaCodArea, setAreaCodArea] = useState('');
-    // const [areaName, setAreaName] = useState('');
     const navigate = useNavigate();
     const params = useParams();
+    const [university, setUniversity] = useState(null);
+    const [area, setArea] = useState(null);
     const { uni_id, area_id } = params;
 
     useEffect(() => {
-        // Función para obtener las áreas desde la API
-        const fetchAreas = async () => {
-            try {
-                const token = localStorage.getItem('token'); // Obtén el token del localStorage
-                const response = await axios.get('https://genial-academy-backend.onrender.com/areas/findAll', {
+      const fetchAreas = async () => {
+          const token = localStorage.getItem("token");
+          try {
+              const response = await axios.get(
+                  'https://genial-academy-backend.onrender.com/areas/findAll',
+                  {
+                      headers: {
+                        "Content-Type": "application/json",
+                        "Authorization" : `Bearer ${token}`,
+                      },
+                  }
+              );
+
+              console.log(response.data[0]);
+              let a = response.data.filter(areas => areas.codArea.toLowerCase().normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, '').replace(/ /g, '') === area_id.toLowerCase())
+              setArea(a[0]);
+          } catch (error) {
+              console.error("Error fetching areas data:", error);
+          }
+      };
+
+      fetchAreas();
+  }, []);
+  
+  useEffect(() => {
+    const fetchUniversity = async () => {
+        const token = localStorage.getItem("token");
+        try {
+            const response = await axios.get(  /**  /home/unmsm/ */
+                `https://genial-academy-backend.onrender.com/universities/findAll`,
+                {
                     headers: {
-                        Authorization: `Bearer ${token}`
-                    }
-                });
-                const area = response.data.find(a => a.id.toString() === area_id);
-                // if (area) {
-                //     setAreaCodArea(area.codArea);
-                //     setAreaName(area.name);
-                // }
-            } catch (error) {
-                console.error('Error al obtener las áreas', error);
-            }
-        };
-        fetchAreas();
-    }, [area_id]);
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+            let uni = response.data.filter(university => university.acronym.toLowerCase() === uni_id.toLowerCase());
+            setUniversity(uni[0]);
+        } catch (error) {
+            console.error("Error fetching university data:", error);
+        }
+    };
+
+    fetchUniversity();
+}, [uni_id]);
+
 
     function getCoursesById(uni_id, area_id) {
         return [
@@ -130,15 +157,15 @@ export const Area = () => {
             <section id="section1">
                 <div id="contenedor1">
                     <div id="navigation">
-                        <h4 id="btnunmsm">{uni_id} &gt; {area_id}</h4>
+                        <h4 id="btnunmsm">{university? university.acronym : uni_id} &gt; {area? area.codArea : area_id}</h4>
                         <button name="btnregresar" id="btnregresar" onClick={() => navigate(-1)}></button>
                     </div>
                     <p><img src='/src/assets/images/principal.png' alt="Imagen Principal" id="imgprincipal" /></p>
                 </div>
                 <div id="contenedor2">
-                    <h1 id="titulo">BIENVENIDO AL<br /> {area_id}</h1>
+                    <h1 id="titulo">BIENVENIDO AL<br /> {area? area.codArea : area_id}</h1> 
                     <div id="container">
-                        <h3>En esta sección encontrarás material educativo para <br />ayudar a tu preparación referente al área de <br />{area_id}.</h3>
+                        <h3>En esta sección encontrarás material educativo para <br />ayudar a tu preparación referente al área de <br />{area? area.name : area_id}.</h3>
                     </div>
                 </div>
             </section>

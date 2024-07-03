@@ -32,21 +32,17 @@ body {
 #titulo {
   position: absolute;
   bottom: 450px;
-  margin-left: 920px;
+  margin-left: 1000px;
   letter-spacing: 0.05em; 
   line-height: 2.0;
+  text-transform: uppercase;
 }
 #container {
   position: absolute;
   line-height: 1.7;
   bottom: 295px;
-  text-align: center;
   margin-left: 800px;
   text-align: left;
-}
-
-h4 {
-  color: #000000; 
 }
 
 h1, h3 {

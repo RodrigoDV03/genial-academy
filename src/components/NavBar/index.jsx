@@ -18,9 +18,9 @@ export const NavBar = () => {
 
   return (
     <header>
-        <div className="logo_container">
+        <Link to={"/home"} className="logo_container">
           <img src="/src/assets/images/GENIALACADEMY_LOGO.png" alt="" />
-        </div>
+        </Link>
         <nav className="nav_container">
             <ul className="nav">
               <li className="header__nav__item">
@@ -43,7 +43,7 @@ export const NavBar = () => {
         <div className="actions_container">
             <img src='/src/assets/images/userMenu.png' onClick={handleOpenModal} className="open-modal-button">
             </img>
-            <span>Bienvenido, {username}</span>
+            <span>Bienvenido {username}</span>
         </div>
         <ModalUser isOpen={isModalOpen} onClose={handleCloseModal} />
     </header>

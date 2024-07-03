@@ -35,6 +35,11 @@ main{
     letter-spacing: .1875rem;
 }
 
+.text__title img{
+    height: 10rem;
+    width: 10rem;
+}
+
 .text__paragraph{
     color: white;
     margin-top: 1.25rem;

@@ -34,7 +34,7 @@ export const UniversitiesSection = () => {
     function universityCard(university) {
         return (
         <button className="u_card" key={university.id}>
-            <Link to={university.acronym} className="link">
+            <Link to={university.acronym.toLowerCase()} className="link">
                 <div className="u_card_img">
                     <img src={university.imgUrl} alt={university.name} />
                 </div>
