@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { NavBar } from '../../components/NavBar';
 import './styles.css';
 
 export const ToDoList = () => {
@@ -51,7 +52,9 @@ export const ToDoList = () => {
 
   return (
     <div className="App">
+      
       <main className='main'>
+        <NavBar />
         <div className="container--todolist">
           <div className="container__list">
             <div className="list__texts">

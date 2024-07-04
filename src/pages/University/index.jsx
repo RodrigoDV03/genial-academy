@@ -21,51 +21,55 @@ export const University = () => {
         setModalOpen(false);
     };
 
-    // Fetch university data from the backend
-    useEffect(() => {
-        const fetchUniversity = async () => {
-            const token = localStorage.getItem("token");
-            try {
-                const response = await axios.get(
-                    `https://genial-academy-backend.onrender.com/universities/findAll`,
-                    {
-                        headers: {
-                            Authorization: `Bearer ${token}`,
-                        },
-                    }
-                );
-                let uni = response.data.filter(university => university.acronym.toLowerCase() === uni_id.toLowerCase());
-                setUniversity(uni[0]);
-            } catch (error) {
-                console.error("Error fetching university data:", error);
-            }
-        };
+    const fetchUniversity = async () => {
+        const token = localStorage.getItem("token");
+        try {
+            const response = await axios.get(
+                `https://genial-academy-backend.onrender.com/universities/findAll`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+            let uni = response.data.filter(university => university.acronym.toLowerCase() === uni_id.toLowerCase());
+            setUniversity(uni[0]);
+        } catch (error) {
+            console.error("Error fetching university data:", error);
+        }
+    };
 
-        fetchUniversity();
-    }, [uni_id]);
+    const fetchAreas = async () => {
+        const token = localStorage.getItem("token");
+        try {
+            const response = await axios.get(
+                `https://genial-academy-backend.onrender.com/areas/findByUniId/${university.id}`,
+                {
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                    },
+                }
+            );
+            console.log(response.data[0]);
+            setAreas(response.data);
+        } catch (error) {
+            console.error("Error fetching areas data:", error);
+        }
+    };
 
     // Fetch areas data from the backend
-    useEffect(() => {
-        const fetchAreas = async () => {
-            const token = localStorage.getItem("token");
-            try {
-                const response = await axios.get(
-                    `https://genial-academy-backend.onrender.com/areas/findByUniId/${university.id}`,
-                    {
-                        headers: {
-                            Authorization: `Bearer ${token}`,
-                        },
-                    }
-                );
-                console.log(response.data[0]);
-                setAreas(response.data);
-            } catch (error) {
-                console.error("Error fetching areas data:", error);
-            }
+    useEffect( () =>{
+        const fetchData = async () => {
+            await fetchUniversity();
         };
-
-        fetchAreas();
+        fetchData();
     }, []);
+
+    useEffect(() => {
+        if (university) {
+            fetchAreas(university.id);
+        }
+    }, [university]);
 
     function areaCard(area) {
         return (

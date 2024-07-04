@@ -29,8 +29,8 @@ export const NavBar = () => {
                 </Link>
               </li>
               <li className="header__nav__item">
-                <Link to='/home/:uni_id' className="nav_link">
-                  Universidades
+                <Link to="/todolist" className="nav_link">
+                  To do list
                 </Link>
               </li>
               <li className="header__nav__item">
