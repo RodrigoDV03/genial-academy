@@ -177,36 +177,36 @@ export const Area = () => {
                 </div>
             </section>
             <section id="section3">
-                <h1 id="titulo3">Exámenes de admisión</h1>
-                <div className="exam-container" id="exam-container1">
-                    <div className="exam-button">
-                        <img src='/src/assets/images/lista.png' alt="2020-I" />
-                        <span>2020-I</span>
-                    </div>
-                    <div className="exam-button">
-                        <img src='/src/assets/images/lista.png' alt="2020-II" />
-                        <span>2020-II</span>
-                    </div>
-                    <div className="exam-button">
-                        <img src='/src/assets/images/lista.png' alt="2021-I" />
-                        <span>2021-I</span>
-                    </div>
-                </div>
-                <div className="exam-container" id="exam-container2">
-                    <div className="exam-button">
-                        <img src='/src/assets/images/lista.png' alt="2021-II" />
-                        <span>2021-II</span>
-                    </div>
-                    <div className="exam-button">
-                        <img src='/src/assets/images/lista.png' alt="2022-I" />
-                        <span>2022-I</span>
-                    </div>
-                    <div className="exam-button">
-                        <img src='/src/assets/images/lista.png' alt="2022-II" />
-                        <span>2022-II</span>
-                    </div>
-                </div>
-            </section>
+  <h1 id="titulo3">Exámenes de admisión</h1>
+  <div className="exam-container" id="exam-container1">
+    <a href='https://drive.google.com/file/d/1c007AHsDKIN7fjuufideMhJ-WohJCDvf/view?usp=drive_link' target="_blank" rel="noopener noreferrer" className="exam-button">
+      <img src='/src/assets/images/lista.png' alt="2020-I" />
+      <span>2020-I</span>
+    </a>
+    <a href='https://drive.google.com/file/d/1L4Ov_9-spyRV8HsFL2WAilR5WW2GjpGV/view?usp=drive_link' target="_blank" rel="noopener noreferrer" className="exam-button">
+      <img src='/src/assets/images/lista.png' alt="2020-II" />
+      <span>2020-II</span>
+    </a>
+    <a href='https://drive.google.com/file/d/1IAHxvo1Luys2j2qwtImOjzw55A4cZxI9/view?usp=drive_link' target="_blank" rel="noopener noreferrer" className="exam-button">
+      <img src='/src/assets/images/lista.png' alt="2021-I" />
+      <span>2021-I</span>
+    </a>
+  </div>
+  <div className="exam-container" id="exam-container2">
+    <a href='https://drive.google.com/file/d/1DpLiGf0BcO-Ptpl6IFPwVaZlDOznDe1e/view?usp=drive_link' target="_blank" rel="noopener noreferrer" className="exam-button">
+      <img src='/src/assets/images/lista.png' alt="2021-II" />
+      <span>2021-II</span>
+    </a>
+    <a href='https://drive.google.com/file/d/1ohbIBtiUiuVJ1AdDGH8_3hCcd2IafOft/view?usp=drive_link' target="_blank" rel="noopener noreferrer" className="exam-button">
+      <img src='/src/assets/images/lista.png' alt="2022-I" />
+      <span>2022-I</span>
+    </a>
+    <a href='https://drive.google.com/file/d/1CDmkZrC6fO9mGvGwGZrQhBuT2HJ34ief/view?usp=drive_link' target="_blank" rel="noopener noreferrer" className="exam-button">
+      <img src='/src/assets/images/lista.png' alt="2022-II" />
+      <span>2022-II</span>
+    </a>
+  </div>
+</section>
             <Footer></Footer>
         </div>
     );

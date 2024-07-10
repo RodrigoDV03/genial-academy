@@ -78,5 +78,33 @@ header{
     align-items: center;
     cursor: pointer;
 }
-
-
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    background-color: #aedad0;
+    min-width: 120px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(255, 253, 253, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown_menu li {
+    display: block;
+  }
+  
+  .dropdown_menu li a {
+    padding: 12px 20px;
+    color: #21433B;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown_menu li a:hover {
+    background-color: #d4f7e3;
+  }
+  
+  /* Mostrar el menú desplegable al pasar el mouse por encima del elemento padre */
+  .header__nav__item.dropdown:hover .dropdown_menu {
+    display: block;
+  }

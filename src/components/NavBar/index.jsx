@@ -28,6 +28,23 @@ export const NavBar = () => {
                   Inicio
                 </Link>
               </li>
+
+              <li className="header__nav__item dropdown">
+            <span className="nav_link">
+              Universidades
+            </span>
+              <ul className="dropdown_menu">
+                <li><Link to=''>UNMSM</Link></li>
+                <li><Link to=''>UNI</Link></li>
+                <li><Link to=''>UNAC</Link></li>
+                <li><Link to=''>UNAL</Link></li>
+                <li><Link to=''>UNFV</Link></li>
+                <li><Link to=''>UNTELS</Link></li>
+                <li><Link to=''>UNSA</Link></li>
+                <li><Link to=''>UNE</Link></li>
+              </ul>
+          </li>
+
               <li className="header__nav__item">
                 <Link to="/todolist" className="nav_link">
                   To do list
