@@ -16,7 +16,7 @@ const ModalQuestions = ({ theme, isOpen, onClose }) => {
         <h1>Preguntas de {theme.name}</h1>
         <div className="levelsContainer">
           <div className="level">
-            <Link to={`${theme.id}/basic`}>
+            <Link to={`${theme.id}/Básico`}>
               <div className="level__image basic"></div>
             </Link>
             <div className="level__title">
@@ -24,7 +24,7 @@ const ModalQuestions = ({ theme, isOpen, onClose }) => {
             </div>
           </div>
           <div className="level">
-            <Link to={`${theme.id}/medium`}>
+            <Link to={`${theme.id}/Intermedio`}>
               <div className="level__image medium"></div>
             </Link>
             <div className="level__title">
@@ -32,7 +32,7 @@ const ModalQuestions = ({ theme, isOpen, onClose }) => {
             </div>
           </div>
           <div className="level">
-            <Link to={`${theme.id}/advanced`}>
+            <Link to={`${theme.id}/Avanzado`}>
               <div className="level__image advanced"></div>
             </Link>
             <div className="level__title">

@@ -1,7 +1,12 @@
 import React from "react";
 import "./styles.css";
 
-export const PresentationSection = () => {
+export const PresentationSection = ({targetRef}) => {
+
+  const handleScroll = () => {
+    targetRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="screen">
       <div className="p_container">
@@ -13,7 +18,7 @@ export const PresentationSection = () => {
             académicas. Tu viaje hacia el éxito universitario comienza ahora.
             ¡Estamos emocionados de ser parte de tu trayectoria educativa!
           </p>
-          <button className="p_button">Ver tutorial</button>
+          <button onClick={handleScroll} className="p_button" >Ver tutorial</button>
         </div>
       </div>
       <div className="bg_container">

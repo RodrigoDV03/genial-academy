@@ -34,14 +34,14 @@ export const NavBar = () => {
               Universidades
             </span>
               <ul className="dropdown_menu">
-                <li><Link to=''>UNMSM</Link></li>
-                <li><Link to=''>UNI</Link></li>
-                <li><Link to=''>UNAC</Link></li>
-                <li><Link to=''>UNAL</Link></li>
-                <li><Link to=''>UNFV</Link></li>
-                <li><Link to=''>UNTELS</Link></li>
-                <li><Link to=''>UNSA</Link></li>
-                <li><Link to=''>UNE</Link></li>
+                <li><Link to='/home/unmsm'>UNMSM</Link></li>
+                <li><Link to='/home/uni'>UNI</Link></li>
+                <li><Link to='/home/unac'>UNAC</Link></li>
+                <li><Link to='/home/unalm'>UNALM</Link></li>
+                <li><Link to='/home/unfv'>UNFV</Link></li>
+                <li><Link to='/home/untels'>UNTELS</Link></li>
+                <li><Link to='/home/unsa'>UNSA</Link></li>
+                <li><Link to='/home/une'>UNE</Link></li>
               </ul>
           </li>
 

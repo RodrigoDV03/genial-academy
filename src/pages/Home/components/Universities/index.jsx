@@ -9,7 +9,7 @@ export const UniversitiesSection = () => {
     useEffect(() => {
         async function fetchUniversities() {
         const token = localStorage.getItem("token");
-        // Obtén el token del localStorage
+        
         if (!token) {
             console.error("Token no encontrado en el localStorage");
             return;

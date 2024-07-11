@@ -1,4 +1,5 @@
 import "./styles.css"
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { NavBar } from "../../components/NavBar";
 import { Footer } from "../../components/Footer";
@@ -8,175 +9,46 @@ import ModalLevel from "../../components/Modals/Modal_Level/modalLevel";
 export const Level = () => {
     const params = useParams();
     const navigate = useNavigate();
-    const {uni_id, area_id, course_id, theme_id, level_id} = params;
+    const [questions, setQuestion] = useState([]);
+
+    const {theme_id, level_id} = params;
 
     //redireccion
     useEffect(() => {
-        if (!["advanced", "medium", "basic"].includes(level_id)) {
+        if (!["Avanzado", "Intermedio", "Básico"].includes(level_id)) {
             navigate('/home');
         }
     }, [level_id, navigate]);
 
-    const options = [
+    const token = localStorage.getItem("token");
+
+    useEffect(() => {
+        const fetchQuestions = async () => {
+            try {
+                const response = await axios.get(
+                    `https://genial-academy-backend.onrender.com/quizzes/findByTopicId/${theme_id}`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    }
+                );
+                let question = response.data.slice(0, 7);
+                console.log(question);
+                setQuestion(question);
+            } catch (error) {
+                console.error("Error fetching questions data:", error);
+            }
+        };
+        fetchQuestions();
+    }, []);
+
+    const optionsChar = [
         "a","b", "c", "d", "e", "f"
     ]
 
-    function getQuestionsById(uni_id, area_id, course_id, theme_id, level_id) {
-        return [
-            {
-                desc: "La proposición: “Si María viaja a Cusco o no sale de vacaciones, entonces María no viaja a Cusco ni sale de vacaciones” es equivalente a:",
-                answers: [
-                    {
-                        correct: true,
-                        desc: "María viaja a Cusco o sale de vacaciones.",
-                    },
-                    {
-                        correct: false,
-                        desc: "María no viaja a Cusco.",
-                    },
-                    {
-                        correct: false,
-                        desc: "María no viaja a Cusco y no sale de vacaciones.",
-                    },
-                    {
-                        correct: false,
-                        desc: "María no viaja a Cusco o sale de vacaciones.",
-                    },
-                ]
-            },
-            {
-                desc: "La proposición : “Si Gilda fuma entonces tose y si no fuma entonces baila; por lo tanto, si Gilda no tose , entonces no baila” es falsa . ¿Cuál de las siguientes proposiciones es verdadera?",
-                answers: [
-                    {
-                        correct: true,
-                        desc: "Gilda fuma",
-                    },
-                    {
-                        correct: false,
-                        desc: "Gilda tose",
-                    },
-                    {
-                        correct: false,
-                        desc: "Gilda fuma y baila",
-                    },
-                    {
-                        correct: false,
-                        desc: "Gilda fuma o baila",
-                    },
-                ]
-            },
-            {
-                desc: "La proposición: “Si María viaja a Cusco o no sale de vacaciones, entonces María no viaja a Cusco ni sale de vacaciones” es equivalente a:",
-                answers: [
-                    {
-                        correct: true,
-                        desc: "María viaja a Cusco o sale de vacaciones.",
-                    },
-                    {
-                        correct: false,
-                        desc: "María no viaja a Cusco.",
-                    },
-                    {
-                        correct: false,
-                        desc: "María no viaja a Cusco y no sale de vacaciones.",
-                    },
-                    {
-                        correct: false,
-                        desc: "María no viaja a Cusco o sale de vacaciones.",
-                    },
-                ]
-            },
-            {
-                desc: "La proposición : “Si Gilda fuma entonces tose y si no fuma entonces baila; por lo tanto, si Gilda no tose , entonces no baila” es falsa . ¿Cuál de las siguientes proposiciones es verdadera?",
-                answers: [
-                    {
-                        correct: true,
-                        desc: "Gilda fuma",
-                    },
-                    {
-                        correct: false,
-                        desc: "Gilda tose",
-                    },
-                    {
-                        correct: false,
-                        desc: "Gilda fuma y baila",
-                    },
-                    {
-                        correct: false,
-                        desc: "Gilda fuma o baila",
-                    },
-                ]
-            },
-            {
-                desc: "La proposición: “Si María viaja a Cusco o no sale de vacaciones, entonces María no viaja a Cusco ni sale de vacaciones” es equivalente a:",
-                answers: [
-                    {
-                        correct: true,
-                        desc: "María viaja a Cusco o sale de vacaciones.",
-                    },
-                    {
-                        correct: false,
-                        desc: "María no viaja a Cusco.",
-                    },
-                    {
-                        correct: false,
-                        desc: "María no viaja a Cusco y no sale de vacaciones.",
-                    },
-                    {
-                        correct: false,
-                        desc: "María no viaja a Cusco o sale de vacaciones.",
-                    },
-                ]
-            },
-            {
-                desc: "La proposición : “Si Gilda fuma entonces tose y si no fuma entonces baila; por lo tanto, si Gilda no tose , entonces no baila” es falsa . ¿Cuál de las siguientes proposiciones es verdadera?",
-                answers: [
-                    {
-                        correct: true,
-                        desc: "Gilda fuma",
-                    },
-                    {
-                        correct: false,
-                        desc: "Gilda tose",
-                    },
-                    {
-                        correct: false,
-                        desc: "Gilda fuma y baila",
-                    },
-                    {
-                        correct: false,
-                        desc: "Gilda fuma o baila",
-                    },
-                ]
-            },
-            {
-                desc: "La proposición: “Si María viaja a Cusco o no sale de vacaciones, entonces María no viaja a Cusco ni sale de vacaciones” es equivalente a:",
-                answers: [
-                    {
-                        correct: true,
-                        desc: "María viaja a Cusco o sale de vacaciones.",
-                    },
-                    {
-                        correct: false,
-                        desc: "María no viaja a Cusco.",
-                    },
-                    {
-                        correct: false,
-                        desc: "María no viaja a Cusco y no sale de vacaciones.",
-                    },
-                    {
-                        correct: false,
-                        desc: "María no viaja a Cusco o sale de vacaciones.",
-                    },
-                ]
-            },
-        ];
-    }
-
-    const QUESTIONS = getQuestionsById(uni_id, area_id, course_id, theme_id, level_id);
-
     let s = []
-    for (let index = 0; index < QUESTIONS.length; index++) {
+    for (let index = 0; index < questions.length; index++) {
         s[index] = -1
     }
 
@@ -188,10 +60,10 @@ export const Level = () => {
         const coin = 3;
         const penaltyCoin = 1;
         const newResult = {coins: 0, correct: 0, incorrect: 0}
-        QUESTIONS.forEach((question, number_q)=> {
-            question.answers.forEach((answer, number_a) => {
-                if(number_a == selection[number_q]) {
-                    if(answer.correct){
+        questions.forEach((question, number_q)=> {
+            question.options.forEach((option, number_o) => {
+                if(number_o == selection[number_q]) {
+                    if(option.isCorrect){
                         newResult.correct++
                     }
                     else {
@@ -219,17 +91,17 @@ export const Level = () => {
         setSelection(newSelection);
     }
 
-    function generateAnswers(answers, number_q) {
+    function generateOptions(options, number_q) {
         const html = [];
-        answers.forEach((answer, i) => {
+        options.forEach((option, i) => {
             html.push(
                 <div className="question">
                     <div className={`question_selector ${selection[number_q] == i? "question_selector_selected" : ""}`}
                         onClick={()=>handelSelection(number_q, i)}
                     >
-                        {options[i]}
+                        {optionsChar[i]}
                     </div>
-                    <p>{answer.desc}</p>
+                    <p>{option.optionText}</p>
                 </div>
             );
         });
@@ -241,10 +113,10 @@ export const Level = () => {
             <div className="question__container">
                 <h4>Pregunta {number_q+1}:</h4>
                 <br/>
-                <p>{question.desc}</p>
+                <p>{question.question}</p>
                 <br/>
                 <div className="question__answer">
-                    {generateAnswers(question.answers, number_q)}
+                    {generateOptions(question.options, number_q)}
                 </div>
             </div>
         );
@@ -252,7 +124,7 @@ export const Level = () => {
 
     function generateFlex() {
         const html = [];
-        QUESTIONS.forEach((question, index) => {
+        questions.forEach((question, index) => {
             html.push(
                 questionSection(question, index)
             );
@@ -263,7 +135,7 @@ export const Level = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <main>
+            <main className="level_screen">
                 <h1>Nivel {level_id}</h1>
                 <div className="questions_container">
                     {generateFlex()}

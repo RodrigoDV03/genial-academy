@@ -5,6 +5,10 @@ body{
     color: #282828;
 }
 
+.course_screen {
+    padding-top: 65px;
+}
+
 main h1{
     color: black;
     font-size: 32px;

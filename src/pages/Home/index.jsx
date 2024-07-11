@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./styles.css";
 import {NavBar} from "../../components/NavBar";
 import {Footer} from "../../components/Footer";
@@ -11,14 +11,16 @@ import {FaqSection} from "./components/Faq";
 
 export const Home = () => {
 
+    const targetRef = useRef(null);
+    
     return (
         <div>
             <NavBar/>
             <div className="content">
-                <PresentationSection></PresentationSection>
+                <PresentationSection targetRef={targetRef}></PresentationSection>
                 <FunctionSection></FunctionSection>
                 <UniversitiesSection></UniversitiesSection>
-                <TutorialSection></TutorialSection>
+                <TutorialSection ref={targetRef}/>
                 <MemberShipSection></MemberShipSection>
                 <FaqSection></FaqSection>
                 <Footer/>

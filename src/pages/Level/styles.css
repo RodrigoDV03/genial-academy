@@ -1,4 +1,8 @@
 
+.level_screen {
+    padding-top: 65px;
+}
+
 .questions_container {
     margin-top: 5rem;
     margin-bottom: 5rem;
@@ -18,6 +22,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+.question p {
+    width: 500px;
 }
 
 .question_selector {

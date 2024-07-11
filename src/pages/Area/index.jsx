@@ -10,11 +10,13 @@ export const Area = () => {
     const params = useParams();
     const [university, setUniversity] = useState(null);
     const [area, setArea] = useState(null);
+    const [courses, setCourses] = useState([]);
     const { uni_id, area_id } = params;
+
+    const token = localStorage.getItem("token");
 
     useEffect(() => {
       const fetchAreas = async () => {
-          const token = localStorage.getItem("token");
           try {
               const response = await axios.get(
                   'https://genial-academy-backend.onrender.com/areas/findAll',
@@ -40,7 +42,6 @@ export const Area = () => {
   
   useEffect(() => {
     const fetchUniversity = async () => {
-        const token = localStorage.getItem("token");
         try {
             const response = await axios.get(  /**  /home/unmsm/ */
                 `https://genial-academy-backend.onrender.com/universities/findAll`,
@@ -60,90 +61,39 @@ export const Area = () => {
     fetchUniversity();
 }, [uni_id]);
 
+    useEffect(() => {
+      const fetchCourses = async () => {
+          try {
+              const response = await axios.get(
+                  `https://genial-academy-backend.onrender.com/courses/findAll`,
+                  {
+                      headers: {
+                          Authorization: `Bearer ${token}`,
+                      },
+                  }
+              );
+              let courses = response.data;
+              setCourses(courses);
+          } catch (error) {
+              console.error("Error fetching courses data:", error);
+          }
+      };
 
-    function getCoursesById(uni_id, area_id) {
-        return [
-            {
-              id: 'aritmetica',
-              name: 'Aritmética'
-            },
-            {
-              id: 'geometria',
-              name: 'Geometría'
-            },
-            {
-              id: 'algebra',
-              name: 'Álgebra'
-            },
-            {
-              id: 'trigonometria',
-              name: 'Trigonometría'
-            },
-            {
-              id: 'filosofia',
-              name: 'Filosofía'
-            },
-            {
-              id: 'literatura',
-              name: 'Literatura'
-            },
-            {
-              id: 'lenguaje',
-              name: 'Lenguaje'
-            },
-            {
-              id: 'habilidad_matematica',
-              name: 'Habilidad Matemática'
-            },
-            {
-              id: 'historia_universal',
-              name: 'Historia Universal'
-            },
-            {
-              id: 'historia_peru',
-              name: 'Historia del Perú'
-            },
-            {
-              id: 'psicologia',
-              name: 'Psicología'
-            },
-            {
-              id: 'economia',
-              name: 'Economía'
-            },
-            {
-              id: 'quimica',
-              name: 'Química'
-            },
-            {
-              id: 'civica',
-              name: 'Cívica'
-            },
-            {
-              id: 'biologia',
-              name: 'Biología'
-            },
-            {
-              id: 'fisica',
-              name: 'Física'
-            }
-          ];
-    }
-
-    const COURSES = getCoursesById(uni_id, area_id);
+      fetchCourses();
+    }, []);
 
     function courseCard(course) {
-        return <Link to={course.id} className='link'>
+        return <Link to={course.name.toLowerCase().replace(/ /g, '-').replace(' ','-')} className='link'>
             <div className="circle-button">
-                <img src={`/src/assets/images/${course.id}.png`} alt={course.name} />
+                <img src={`/src/assets/images/${course.name.toLowerCase().replace(/ /g, '_')}.png`} alt={course.name} />
                 <span>{course.name}</span>
             </div>
         </Link>
     }
-
+ 
     function generateGrid() {
         const html = [];
-        COURSES.forEach(course => {
+        courses.forEach(course => {
             html.push(
                 courseCard(course)
             );
