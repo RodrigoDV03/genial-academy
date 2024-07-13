@@ -1,8 +1,11 @@
-# React + Vite
+# Plataforma educativa web para contribuir con la preparación académica de estudiantes preuniversitarios
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema desarrollado como parte del curso de Experiencia de Usuario y Usabilidad
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Integrantes
+- [@crisbelagui](https://github.com/diegoam11)
+- [@diegoam11](https://github.com/diegoam11)
+- [@RodrigoDV03](https://github.com/RodrigoDV03)
+- [@ValeAnd](https://github.com/ValeAnd)
+- [JoshuaPariona](https://github.com/JoshuaPariona)
+- [@Marianoavc](https://github.com/Marianoavc)
