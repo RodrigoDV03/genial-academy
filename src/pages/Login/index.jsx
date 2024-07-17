@@ -21,14 +21,9 @@ export const Login = () => {
         setFormErrors(errors);
         if (Object.keys(errors).length === 0) {
             try {
-                console.log(formValues);
-                
                 const response = await axios.post('https://genial-academy-backend.onrender.com/auth/login', formValues);
-                console.log("hello world");
-                console.log(response.data);
                 localStorage.setItem('token', response.data.token);
                 localStorage.setItem('username', formValues.username);
-                console.log("hello world");
                 setIsSubmit(true);
 
             } catch (error) {
@@ -60,7 +55,6 @@ export const Login = () => {
 
     return (
         <div className="login__container">
-            <div className="login__image"></div>
             <div className="login__wrapper">
                 <div className="login__form__box">
                     {Object.keys(formErrors).length === 0 && isSubmit && 

@@ -27,8 +27,6 @@ export const Area = () => {
                       },
                   }
               );
-
-              console.log(response.data[0]);
               let a = response.data.filter(areas => areas.codArea.toLowerCase().normalize('NFD')
               .replace(/[\u0300-\u036f]/g, '').replace(/ /g, '') === area_id.toLowerCase())
               setArea(a[0]);

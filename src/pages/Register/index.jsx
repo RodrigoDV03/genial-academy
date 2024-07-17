@@ -27,10 +27,7 @@ export const Register = () => {
                         "Content-Type": "application/json",
                     }
                 });
-
-                console.log(response.data.token);
                 localStorage.setItem('token', JSON.stringify(response.data.token));
-                console.log(response.data.token);
                 localStorage.setItem('username', formValues.username);
                 setIsSubmit(true);
             } catch (error) {

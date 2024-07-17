@@ -34,7 +34,6 @@ export const Level = () => {
                     }
                 );
                 let question = response.data.slice(0, 7);
-                console.log(question);
                 setQuestion(question);
             } catch (error) {
                 console.error("Error fetching questions data:", error);

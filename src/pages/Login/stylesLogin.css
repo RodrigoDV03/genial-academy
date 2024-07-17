@@ -1,21 +1,14 @@
 .login__container{
-    background: url(/src/assets/images/Wave.png);
-    background-size: cover;
+    background: url(/src/assets/images/login.png);
+    background-size: 100% 100%;
     display: flex;
-    max-height: 100vh;
-}
-
-.login__image{
-    height: 800px;
-    width: 800px;
-    background-image: url(/src/assets/images/login_image.png);
-    background-size: cover;
-    margin-left: 200px;
-    margin-bottom: 500px;
+    min-height: 100vh;
+    justify-content: right;
 }
 
 .login__wrapper{
     margin: auto;
+    margin-right: 200px;
     height: fit-content;
     background-color: #fff;
     border-radius: 20px;

@@ -50,7 +50,6 @@ export const University = () => {
                     },
                 }
             );
-            console.log(response.data[0]);
             setAreas(response.data);
         } catch (error) {
             console.error("Error fetching areas data:", error);

@@ -99,8 +99,6 @@ export const Course = () => {
 
   const fetchTopics = async (course_id) => {
     try {
-      console.log("asas");
-      console.log(course_id);
       const response = await axios.get(
         `https://genial-academy-backend.onrender.com/topics/findByCourseId/${course_id}`,//
         {
@@ -109,9 +107,7 @@ export const Course = () => {
           },
         }
       );
-      console.log("asas22");
       let topics = response.data;
-      console.log(topics);
       setTopics(topics);
     } catch (error) {
       console.error("Error fetching topics data:", error);
@@ -127,8 +123,7 @@ export const Course = () => {
 
   useEffect(() => {
     if (course) {
-      console.log(course.id); //TODO: course no tiene id
-      fetchTopics(course.id); // undefined
+      fetchTopics(course.id);
     }
   }, [course]);   
 
