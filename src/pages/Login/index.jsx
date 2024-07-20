@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import ModalLogin from "../../components/Modals/Modal_Login/modalLogin";
@@ -13,7 +12,6 @@ export const Login = () => {
     const [formValues, setFormValues] = useState({ username: "", password: "" });
     const [isSubmit, setIsSubmit] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
-    const [authError, setAuthError] = useState(false);
     const [authError, setAuthError] = useState(false);
 
     const handleChange = (e) => {
