@@ -14,7 +14,6 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
-
 .register__wrapper .register__form__box{
     padding: 40px;
 }
@@ -42,22 +41,32 @@ form .register__input__title{
 
 .register__input__box input{
     width: 100%;
-    height: 30px;
+    height: 40px;
     padding-left: 10px;
     outline: none;
     background-color: transparent;
     border: 1px solid #0009;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
-button.register__toggle__password{
-    background-color: transparent;
-    border:none;
+.register__password__input__container {
+    position: relative;
+}
+
+.register__toggle__password {
+    position: absolute;
+    right: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
     cursor: pointer;
-    color: #4CAD95;
-    font-size: 16px;
-    margin-top: 10px;
+}
+
+.register__toggle__password img {
+    width: 20px;
+    height: 20px;
 }
 
 .register__Button{
@@ -76,12 +85,18 @@ button.register__toggle__password{
     background-color: #296F5D;
 }
 
-p.register__error-message{
-    color: red;
-    font-size: 12px;
-    font-weight: bold;
-    min-height: 16px; /* Reservar espacio para el mensaje de error */
-    margin: 5px 0;    /* Añadir margen para separar el error del input */
+p.register__error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 0;
+    border-radius: 10px;
+    min-height: 16px;
+    padding: 0 10px;
+    width: 100%;
+}
+
+p.register__error-message.hidden {
+    display: none;
 }
 
 form .login__link{
