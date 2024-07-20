@@ -42,24 +42,33 @@ form .login__input__title{
 
 .login__input__box input{
     width: 100%;
-    height: 30px;
+    height: 40px;
     padding-left: 10px;
     outline: none;
     background-color: transparent;
     border: 1px solid #0009;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
-button.login__toggle__password{
-    background-color: transparent;
-    border:none;
+.login__password__input__container {
+    position: relative;
+}
+
+.login__toggle__password {
+    position: absolute;
+    right: 10px;
+    top: 60%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
     cursor: pointer;
-    color: #4CAD95;
-    font-size: 16px;
-    margin-top: 10px;
 }
 
+.login__toggle__password img {
+    width: 20px;
+    height: 20px;
+}
 .login__Button{
     margin: 10px 150px;
     padding: 20px 40px;
@@ -74,14 +83,6 @@ button.login__toggle__password{
 
 .login__Button:hover{
     background-color: #296F5D;
-}
-
-p.login__error-message{
-    color: red;
-    font-size: 12px;
-    font-weight: bold;
-    min-height: 16px; /* Reservar espacio para el mensaje de error */
-    margin: 5px 0;    /* Añadir margen para separar el error del input */
 }
 
 form .register__link{

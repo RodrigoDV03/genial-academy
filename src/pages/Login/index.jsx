@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./stylesLogin.css";
 import ModalLogin from "../../components/Modals/Modal_Login/modalLogin";
+import ModalErrorLogin from "../../components/Modals/Modal_Login/modalErrorLogin";
+import eyeOpenIcon from "../../assets/images/eye-open.svg"; // Asegúrate de que la ruta sea correcta
+import eyeClosedIcon from "../../assets/images/eye-closed.svg"; // Asegúrate de que la ruta sea correcta
+
+import "./stylesLogin.css";
 
 export const Login = () => {
     const [formValues, setFormValues] = useState({ username: "", password: "" });
-    const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
+    const [authError, setAuthError] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -17,37 +21,17 @@ export const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const errors = validate(formValues);
-        setFormErrors(errors);
-        if (Object.keys(errors).length === 0) {
-            try {
-                const response = await axios.post('https://genial-academy-backend.onrender.com/auth/login', formValues);
-                localStorage.setItem('token', response.data.token);
-                localStorage.setItem('username', formValues.username);
-                setIsSubmit(true);
-
-            } catch (error) {
-                console.error('Error al iniciar sesión:', error);
-            }
+        try {
+            const response = await axios.post('https://genial-academy-backend.onrender.com/auth/login', formValues);
+            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('username', formValues.username);
+            setIsSubmit(true);
+            setAuthError(false);
+        } catch (error) {
+            console.error('Error al iniciar sesión:', error);
+            setAuthError(true);
         }
     };
-    
-    useEffect(() => {
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-            console.log(formValues);
-        }
-    }, [formErrors]);
-
-    const validate = (values) => {
-        const errors = {};
-        if (!values.username.trim()) {
-            errors.username = 'Debes escribir un nombre de usuario';
-        }
-        if (!values.password.trim()) {
-            errors.password = 'Debes escribir una contraseña';
-        }
-        return errors;
-    }
 
     const toggleShowPassword = () => {
         setShowPassword(!showPassword);
@@ -57,34 +41,24 @@ export const Login = () => {
         <div className="login__container">
             <div className="login__wrapper">
                 <div className="login__form__box">
-                    {Object.keys(formErrors).length === 0 && isSubmit && 
-                    (
-                        <ModalLogin isOpen={isSubmit} onClose={() => setIsSubmit(false)} />
-                    )}
+                    {isSubmit && ( <ModalLogin isOpen={isSubmit} onClose={() => setIsSubmit(false)} /> )}
+                    {authError && ( <ModalErrorLogin isOpen={authError} onClose={() => setAuthError(false)} /> )}
                     <form onSubmit={handleSubmit}>
                         <h1>HOLA! GENIALACADEMY</h1>
                         <h2>Inicia Sesión</h2>
                         <div className="login__input__box">
                             <div className="login__input__title">Nombre de Usuario:</div>
-                            <input type="text" name="username" value={formValues.username} onChange={handleChange} />
+                            <input type="text" name="username" value={formValues.username} onChange={handleChange} required />
                         </div>
-                        <p className="login__error-message" style={{ visibility: formErrors.username ? 'visible' : 'hidden' }}>{formErrors.username}</p>
                         <div className="login__input__box">
                             <div className="login__input__title">Contraseña:</div>
                             <div className="login__password__input__container">
-                                <input 
-                                    type={showPassword ? "text" : "password"} 
-                                    name="password" 
-                                    value={formValues.password} 
-                                    onChange={handleChange} 
-                                />
+                                <input type={showPassword ? "text" : "password"} name="password" value={formValues.password} onChange={handleChange} required />
                                 <button type="button" className="login__toggle__password" onClick={toggleShowPassword}>
-                                    {showPassword ? "Ocultar contraseña" : "Mostrar contraseña"}
+                                    <img src={showPassword ? eyeOpenIcon : eyeClosedIcon} alt="toggle password visibility" />
                                 </button>
                             </div>
                         </div>
-                        <p className="login__error-message" style={{ visibility: formErrors.password ? 'visible' : 'hidden' }}>{formErrors.password}</p>
-
                         <button type="submit" className="login__Button">
                             Ingresar
                         </button>
