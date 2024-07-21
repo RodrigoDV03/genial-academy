@@ -31,7 +31,7 @@ export const FunctionSection = () => {
           <div className="f_card">
             <div className="f_card_row_1">
               <div className="f_card_icon  color_yellow">
-                <img src="" alt="" />
+                <img src="../src/assets/images/open_book_icon.png" alt="" />
               </div>
               <div className="f_card_title">
                 Simulaciones de exámenes interactivos
@@ -48,7 +48,7 @@ export const FunctionSection = () => {
           <div className="f_card">
             <div className="f_card_row_1">
               <div className="f_card_icon color_gray">
-                <img src="" alt="" />
+                <img src="../src/assets/images/sand_clock.png" alt="" />
               </div>
               <div className="f_card_title">
                 Personalización de horarios de estudio
@@ -64,7 +64,7 @@ export const FunctionSection = () => {
           <div className="f_card">
             <div className="f_card_row_1">
               <div className="f_card_icon color_lila">
-                <img src="" alt="" />
+                <img src="../src/assets/images/question_icon.png" alt="" />
               </div>
               <div className="f_card_title">
                 Preguntas niveladas por dificultad
@@ -81,7 +81,7 @@ export const FunctionSection = () => {
           <div className="f_card">
             <div className="f_card_row_1">
               <div className="f_card_icon color_red">
-                <img src="" alt="" />
+                <img src="../src/assets/images/books_icon.png" alt="" />
               </div>
               <div className="f_card_title">
                 Biblioteca virtual de recurso educativos

@@ -30,16 +30,6 @@ export const Login = () => {
         } catch (error) {
             console.error('Error al iniciar sesión:', error);
             setAuthError(true);
-        try {
-            const response = await axios.post('https://genial-academy-backend.onrender.com/auth/login', formValues);
-            localStorage.setItem('token', response.data.token);
-            localStorage.setItem('username', formValues.username);
-            setIsSubmit(true);
-            setAuthError(false);
-        } catch (error) {
-            console.error('Error al iniciar sesión:', error);
-            setAuthError(true);
-        }
     };
     };
 
@@ -53,23 +43,18 @@ export const Login = () => {
                 <div className="login__form__box">
                     {isSubmit && ( <ModalLogin isOpen={isSubmit} onClose={() => setIsSubmit(false)} /> )}
                     {authError && ( <ModalErrorLogin isOpen={authError} onClose={() => setAuthError(false)} /> )}
-                    {isSubmit && ( <ModalLogin isOpen={isSubmit} onClose={() => setIsSubmit(false)} /> )}
-                    {authError && ( <ModalErrorLogin isOpen={authError} onClose={() => setAuthError(false)} /> )}
                     <form onSubmit={handleSubmit}>
                         <h1>HOLA! GENIALACADEMY</h1>
                         <h2>Inicia Sesión</h2>
                         <div className="login__input__box">
                             <div className="login__input__title">Nombre de Usuario:</div>
                             <input type="text" name="username" value={formValues.username} onChange={handleChange} required />
-                            <input type="text" name="username" value={formValues.username} onChange={handleChange} required />
                         </div>
                         <div className="login__input__box">
                             <div className="login__input__title">Contraseña:</div>
                             <div className="login__password__input__container">
                                 <input type={showPassword ? "text" : "password"} name="password" value={formValues.password} onChange={handleChange} required />
-                                <input type={showPassword ? "text" : "password"} name="password" value={formValues.password} onChange={handleChange} required />
                                 <button type="button" className="login__toggle__password" onClick={toggleShowPassword}>
-                                    <img src={showPassword ? eyeOpenIcon : eyeClosedIcon} alt="toggle password visibility" />
                                     <img src={showPassword ? eyeOpenIcon : eyeClosedIcon} alt="toggle password visibility" />
                                 </button>
                             </div>

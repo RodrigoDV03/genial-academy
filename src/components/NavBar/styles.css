@@ -103,8 +103,7 @@ header{
   .dropdown_menu li a:hover {
     background-color: #d4f7e3;
   }
-  
-  /* Mostrar el menú desplegable al pasar el mouse por encima del elemento padre */
+
   .header__nav__item.dropdown:hover .dropdown_menu {
     display: block;
   }

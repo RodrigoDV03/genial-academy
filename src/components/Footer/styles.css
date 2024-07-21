@@ -23,6 +23,7 @@ footer {
     align-items: center;
     justify-content: center;
     color: #fff;
+    font-weight: 600;
 }
 
 .logo_container {
@@ -38,9 +39,15 @@ footer {
 }
 
 .footer__nav__item {
-    color: #fff;
+    color: #eee;
     text-decoration: none;
     margin: 20px;
+    font-weight: 600;
+}
+
+.footer__nav__item:hover {
+    color: #21433B;
+    cursor: pointer;
 }
 
 .social_container {

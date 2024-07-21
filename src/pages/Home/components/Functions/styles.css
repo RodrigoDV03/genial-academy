@@ -63,8 +63,15 @@
 .f_card_icon {
     border-radius: 50%;
     border: none;
-    width: 4.8rem;
-    height: 4.0625rem;
+    display: flex;
+    width: 70px;
+    height: 64px;
+}
+
+.f_card_icon img{
+    height: 50px;
+    width: 50px;
+    margin: auto;
 }
 
 .f_card_title{
